@@ -1,0 +1,94 @@
+﻿namespace GlamWire_Case_Cracked
+{
+    partial class SaveScreen
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            button1 = new Button();
+            button2 = new Button();
+            Back_bttn = new Button();
+            SuspendLayout();
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel1.Location = new Point(35, 90);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(480, 296);
+            flowLayoutPanel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(547, 108);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 34);
+            button1.TabIndex = 1;
+            button1.Text = "Load Save";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(547, 180);
+            button2.Name = "button2";
+            button2.Size = new Size(112, 34);
+            button2.TabIndex = 2;
+            button2.Text = "Delete Save";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // Back_bttn
+            // 
+            Back_bttn.Location = new Point(35, 25);
+            Back_bttn.Name = "Back_bttn";
+            Back_bttn.Size = new Size(112, 34);
+            Back_bttn.TabIndex = 3;
+            Back_bttn.Text = "Back";
+            Back_bttn.UseVisualStyleBackColor = true;
+            // 
+            // SaveScreen
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(692, 450);
+            Controls.Add(Back_bttn);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(flowLayoutPanel1);
+            Name = "SaveScreen";
+            Text = "Save Files";
+            Load += SaveScreen_Load;
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Button button1;
+        private Button button2;
+        private Button Back_bttn;
+    }
+}
