@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            NewGame_bttn = new Button();
             LoadGame_bttn = new Button();
             Exit_bttn = new Button();
             label1 = new Label();
             label2 = new Label();
             SuspendLayout();
             // 
-            // button1
+            // NewGame_bttn
             // 
-            button1.Location = new Point(270, 180);
-            button1.Name = "button1";
-            button1.Size = new Size(253, 60);
-            button1.TabIndex = 0;
-            button1.Text = "New Game";
-            button1.UseVisualStyleBackColor = true;
+            NewGame_bttn.Location = new Point(270, 180);
+            NewGame_bttn.Name = "NewGame_bttn";
+            NewGame_bttn.Size = new Size(253, 60);
+            NewGame_bttn.TabIndex = 0;
+            NewGame_bttn.Text = "New Game";
+            NewGame_bttn.UseVisualStyleBackColor = true;
             // 
             // LoadGame_bttn
             // 
@@ -61,6 +61,7 @@
             Exit_bttn.TabIndex = 2;
             Exit_bttn.Text = "Exit";
             Exit_bttn.UseVisualStyleBackColor = true;
+            Exit_bttn.Click += Exit_bttn_Click;
             // 
             // label1
             // 
@@ -96,7 +97,7 @@
             Controls.Add(label1);
             Controls.Add(Exit_bttn);
             Controls.Add(LoadGame_bttn);
-            Controls.Add(button1);
+            Controls.Add(NewGame_bttn);
             Name = "Form1";
             Text = "GlamWire : Case Cracked";
             ResumeLayout(false);
@@ -105,7 +106,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button NewGame_bttn;
         private Button LoadGame_bttn;
         private Button Exit_bttn;
         private Label label1;

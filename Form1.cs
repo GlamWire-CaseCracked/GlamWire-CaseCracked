@@ -11,4 +11,9 @@ public partial class Form1 : Form
     {
 
     }
+
+    private void Exit_bttn_Click(object sender, EventArgs e)
+    {
+        Close();
+    }
 }
