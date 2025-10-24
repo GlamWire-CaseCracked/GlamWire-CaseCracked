@@ -28,12 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            button1 = new Button();
+            LoadGame_bttn = new Button();
+            Exit_bttn = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            SuspendLayout();
+            // 
+            // button1
+            // 
+            button1.Location = new Point(270, 180);
+            button1.Name = "button1";
+            button1.Size = new Size(253, 60);
+            button1.TabIndex = 0;
+            button1.Text = "New Game";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // LoadGame_bttn
+            // 
+            LoadGame_bttn.Location = new Point(270, 265);
+            LoadGame_bttn.Name = "LoadGame_bttn";
+            LoadGame_bttn.Size = new Size(253, 60);
+            LoadGame_bttn.TabIndex = 1;
+            LoadGame_bttn.Text = "Load Game";
+            LoadGame_bttn.UseVisualStyleBackColor = true;
+            // 
+            // Exit_bttn
+            // 
+            Exit_bttn.Location = new Point(270, 347);
+            Exit_bttn.Name = "Exit_bttn";
+            Exit_bttn.Size = new Size(253, 60);
+            Exit_bttn.TabIndex = 2;
+            Exit_bttn.Text = "Exit";
+            Exit_bttn.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Goudy Stout", 26F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Silver;
+            label1.Location = new Point(113, 35);
+            label1.Name = "label1";
+            label1.Size = new Size(588, 71);
+            label1.TabIndex = 3;
+            label1.Text = "GlamWire";
+            label1.TextAlign = ContentAlignment.TopCenter;
+            label1.Click += label1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 24F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Location = new Point(220, 106);
+            label2.Name = "label2";
+            label2.Size = new Size(365, 57);
+            label2.TabIndex = 4;
+            label2.Text = "Case Cracked";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.PaleVioletRed;
+            ClientSize = new Size(800, 450);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(Exit_bttn);
+            Controls.Add(LoadGame_bttn);
+            Controls.Add(button1);
+            Name = "Form1";
+            Text = "GlamWire : Case Cracked";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button button1;
+        private Button LoadGame_bttn;
+        private Button Exit_bttn;
+        private Label label1;
+        private Label label2;
     }
 }
