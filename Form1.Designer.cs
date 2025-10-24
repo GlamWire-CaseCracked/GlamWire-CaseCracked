@@ -31,8 +31,8 @@
             NewGame_bttn = new Button();
             LoadGame_bttn = new Button();
             Exit_bttn = new Button();
-            label1 = new Label();
-            label2 = new Label();
+            Title_lbl = new Label();
+            SubTitle_lbl = new Label();
             SuspendLayout();
             // 
             // NewGame_bttn
@@ -63,29 +63,30 @@
             Exit_bttn.UseVisualStyleBackColor = true;
             Exit_bttn.Click += Exit_bttn_Click;
             // 
-            // label1
+            // Title_lbl
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Goudy Stout", 26F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Silver;
-            label1.Location = new Point(113, 35);
-            label1.Name = "label1";
-            label1.Size = new Size(588, 71);
-            label1.TabIndex = 3;
-            label1.Text = "GlamWire";
-            label1.TextAlign = ContentAlignment.TopCenter;
-            label1.Click += label1_Click;
+            Title_lbl.AutoSize = true;
+            Title_lbl.Font = new Font("Bauhaus 93", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Title_lbl.ForeColor = Color.Lavender;
+            Title_lbl.Location = new Point(230, 24);
+            Title_lbl.Name = "Title_lbl";
+            Title_lbl.Size = new Size(340, 82);
+            Title_lbl.TabIndex = 3;
+            Title_lbl.Text = "GlamWire";
+            Title_lbl.TextAlign = ContentAlignment.TopCenter;
+            Title_lbl.Click += label1_Click;
             // 
-            // label2
+            // SubTitle_lbl
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 24F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(220, 106);
-            label2.Name = "label2";
-            label2.Size = new Size(365, 57);
-            label2.TabIndex = 4;
-            label2.Text = "Case Cracked";
-            label2.TextAlign = ContentAlignment.TopCenter;
+            SubTitle_lbl.AutoSize = true;
+            SubTitle_lbl.Font = new Font("Century Gothic", 24F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            SubTitle_lbl.ForeColor = Color.Azure;
+            SubTitle_lbl.Location = new Point(220, 106);
+            SubTitle_lbl.Name = "SubTitle_lbl";
+            SubTitle_lbl.Size = new Size(365, 57);
+            SubTitle_lbl.TabIndex = 4;
+            SubTitle_lbl.Text = "Case Cracked";
+            SubTitle_lbl.TextAlign = ContentAlignment.TopCenter;
             // 
             // Form1
             // 
@@ -93,8 +94,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PaleVioletRed;
             ClientSize = new Size(800, 450);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(SubTitle_lbl);
+            Controls.Add(Title_lbl);
             Controls.Add(Exit_bttn);
             Controls.Add(LoadGame_bttn);
             Controls.Add(NewGame_bttn);
@@ -109,7 +110,7 @@
         private Button NewGame_bttn;
         private Button LoadGame_bttn;
         private Button Exit_bttn;
-        private Label label1;
-        private Label label2;
+        private Label Title_lbl;
+        private Label SubTitle_lbl;
     }
 }
