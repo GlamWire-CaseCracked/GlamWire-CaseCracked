@@ -1,0 +1,7 @@
+/* TABLE ALTERATIONS */
+
+USE GlamWireDb; 
+GO
+
+ALTER TABLE Upgrades
+ADD UpgradePhoto VARBINARY(MAX);
