@@ -1,0 +1,19 @@
+namespace GlamWire_Case_Cracked;
+
+public partial class Form1 : Form
+{
+    public Form1()
+    {
+        InitializeComponent();
+    }
+
+    private void label1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void Exit_bttn_Click(object sender, EventArgs e)
+    {
+        Close();
+    }
+}
