@@ -9,4 +9,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\Katmo\OneDrive\Desktop\CPW Classes\CPW Adv. Net &amp; Software Dev\Software Project Dev\GLAMWIRE1.0\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\Katmo\OneDrive\Desktop\CPW Classes\CPW Adv. Net &amp; Software Dev\Software Project Dev\GLAMWIRE1.0\.editorconfig" />
+  </ItemGroup>
+
 </Project>
