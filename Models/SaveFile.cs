@@ -12,7 +12,6 @@ public class SaveFile
 
     // properties for the savefile needed to load a game
     public int SaveFileID { get; set; }
-    
     public required string PlayerName { get; set; }
     public string? SaveFileName { get; set; } = string.Empty; 
     public int Wallet { get; set; }
