@@ -32,10 +32,15 @@
             button1 = new Button();
             button2 = new Button();
             Back_bttn = new Button();
+            button3 = new Button();
+            label1 = new Label();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.Controls.Add(label1);
+            flowLayoutPanel1.Controls.Add(button3);
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(35, 90);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -69,6 +74,24 @@
             Back_bttn.Text = "Back";
             Back_bttn.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            button3.Location = new Point(3, 28);
+            button3.Name = "button3";
+            button3.Size = new Size(112, 34);
+            button3.TabIndex = 0;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(59, 25);
+            label1.TabIndex = 1;
+            label1.Text = "label1";
+            // 
             // SaveScreen
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -81,6 +104,8 @@
             Name = "SaveScreen";
             Text = "Save Files";
             Load += SaveScreen_Load;
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -90,5 +115,7 @@
         private Button button1;
         private Button button2;
         private Button Back_bttn;
+        private Label label1;
+        private Button button3;
     }
 }
