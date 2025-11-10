@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 
 namespace GlamWire_Case_Cracked.Models;
 
+/// <summary>
+/// Represents a save file for a game, containing player information and game progress.
+/// </summary>
+/// <remarks>This class is designed to mirror the structure of the corresponding database table for save files. It
+/// includes properties for player identification, game progress, and metadata about the save file.</remarks>
+
 public class SaveFile
 { // trying to keep the properties the same as the database table
 

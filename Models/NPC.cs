@@ -8,6 +8,16 @@ using System.Threading.Tasks;
 
 namespace GlamWire_Case_Cracked.Models;
 
+/// <summary>
+/// Represents a non-player character (NPC) in the game, including their identity, 
+/// role, and status.
+/// </summary>
+/// <remarks>This class provides properties to define the NPC's identity, 
+/// role in the game, and other attributes
+/// such as personality type and criminal record. It also indicates whether the NPC 
+/// is currently locked or guilty, which
+/// can affect gameplay.</remarks>
+
 public class NPC
 {
     // primary key for the NPC
