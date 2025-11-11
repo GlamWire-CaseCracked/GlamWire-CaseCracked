@@ -5,8 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace GlamWire_Case_Cracked;
+namespace GlamWire_Case_Cracked.Models;
 
 public class GlamwireDb
 {
@@ -29,6 +28,22 @@ public class GlamwireDb
             // Handle exceptions related to database connection and data retrieval
             Console.WriteLine($"An error occurred while connecting to the database: {ex.Message}");
         }
+    }
+
+    public List<NPC> RetrieveAllNPCs(int npcId)
+    {
+        // placeholder to retrieve all NPCs from the database to populate and move them. 
+
+        // null return (CHANGES NEEDED) 
+        return null;
+    }
+
+    public Case RetrieveActiveCase(int caseId) {
+
+        // placeholder to retrieve all cases from the database to populate and move them. 
+
+        // null return (CHANGES NEEDED) 
+        return null;
     }
 
 }
