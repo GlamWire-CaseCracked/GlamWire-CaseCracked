@@ -32,11 +32,37 @@ public class GlamwireDb
 
     public List<NPC> RetrieveAllNPCs(int npcId)
     {
-        // placeholder to retrieve all NPCs from the database to populate and move them. 
+        List<NPC> npcs = new List<NPC>();
 
+        // placeholder to retrieve all NPCs from the database to populate and move them.
+        // // "hey program, try using the connection string to connect to the database"
+        try
+        { 
+            using SqlConnection connection = new SqlConnection (connectionString);
+            // open the connection (a bridge to the database)
+            connection.Open();
+
+            // create the query to reference the NPC table, just for readability. 
+            string query = @"SELECT * FROM NPC";
+            using SqlCommand cmd = new SqlCommand(query, connection);
+            // use the reader to execute the command and read it from the database.
+            using SqlDataReader reader = cmd.ExecuteReader();
+
+            // use a while loop to read each row of data. 
+            // while there is data to read, keep reading it. 
+            // if not, exit the loop.
+
+        }
+
+        catch (Exception ex){
+
+            // I think copying the generic exception handler is fine for now.
+
+        }
         // null return (CHANGES NEEDED) 
         return null;
     }
+
 
     public Case RetrieveActiveCase(int caseId) {
 
