@@ -47,5 +47,8 @@ public class NPC
     // a viewmodel later to avoid spoiling the game
     // this marks true guilt. /* So if the user falsely accuses someone
     // then that would mean a failed/cold case.*/
-    public required bool IsGuilty { get; set; } 
-    }
+    public required bool IsGuilty { get; set; }
+    // retreives the save file associated with the NPC
+    // so that if they start a new game or load a different save file
+    public required SaveFile SaveFile { get; set; }
+}
