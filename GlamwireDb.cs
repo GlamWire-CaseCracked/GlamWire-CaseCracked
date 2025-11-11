@@ -1,8 +1,10 @@
 ﻿using System;
+using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace GlamWire_Case_Cracked;
 
@@ -17,7 +19,16 @@ public class GlamwireDb
     /// </summary>
     public GlamwireDb()
     {
-
+        try
+        {
+            // Code to connect to the database and retrieve data goes here
+            using SqlConnection connection = new SqlConnection(connectionString);
+        }
+        catch (Exception ex)
+        {
+            // Handle exceptions related to database connection and data retrieval
+            Console.WriteLine($"An error occurred while connecting to the database: {ex.Message}");
+        }
     }
 
 }
