@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.IdentityModel.Tokens;
 
 namespace GlamWire_Case_Cracked.Models;
 
@@ -51,16 +52,30 @@ public class GlamwireDb
             // use a while loop to read each row of data. 
             // while there is data to read, keep reading it. 
             // if not, exit the loop.
-
+            while (reader.Read())
+            {
+                // adding a new npc object to the npc list. 
+                npcs.Add(new NPC {
+                    // go through each column of the NPC table
+                    // and read the data (if any) into the npc object properties.
+                    NPCId = npcId,
+                    NPCFirstName = reader["NPCFirstName"].ToString(),
+                    NPCLastName = reader["NPCLastName"].ToString(),
+                    NPCUsername = reader["NPCUsername"].ToString(),
+                    NPCRole = reader["NPCRole"].ToString(),
+                    PersonalityType = reader["PersonalityType"].ToString(),
+                    IsLocked = (bool)reader["IsLocked"],
+                    IsGuilty = (bool)reader["IsGuilty"],
+                });
+            }
         }
 
         catch (Exception ex){
 
             // I think copying the generic exception handler is fine for now.
-
+            Console.WriteLine($"An error occurred while connecting to the database: {ex.Message}");
         }
-        // null return (CHANGES NEEDED) 
-        return null;
+        return npcs;
     }
 
 
