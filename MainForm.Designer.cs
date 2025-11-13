@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            NewGame_bttn = new Button();
-            LoadGame_bttn = new Button();
-            Exit_bttn = new Button();
-            Title_lbl = new Label();
-            SubTitle_lbl = new Label();
+            btnNewGame = new Button();
+            btnLoadGame = new Button();
+            btnExit = new Button();
+            lblTitle = new Label();
+            lblSubTitle = new Label();
+            btnContinue = new Button();
+            btnSettings = new Button();
             SuspendLayout();
             // 
             // NewGame_bttn
@@ -94,7 +96,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.PaleVioletRed;
+            BackColor = Color.FromArgb(255, 174, 200);
             ClientSize = new Size(800, 450);
             Controls.Add(SubTitle_lbl);
             Controls.Add(Title_lbl);
@@ -109,10 +111,12 @@
 
         #endregion
 
-        private Button NewGame_bttn;
-        private Button LoadGame_bttn;
-        private Button Exit_bttn;
-        private Label Title_lbl;
-        private Label SubTitle_lbl;
+        private Button btnNewGame;
+        private Button btnLoadGame;
+        private Button btnExit;
+        private Label lblTitle;
+        private Label lblSubTitle;
+        private Button btnContinue;
+        private Button btnSettings;
     }
 }
