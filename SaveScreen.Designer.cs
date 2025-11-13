@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             flowLayoutPanel1 = new FlowLayoutPanel();
+            label1 = new Label();
+            button3 = new Button();
             button1 = new Button();
             button2 = new Button();
             Back_bttn = new Button();
-            button3 = new Button();
-            label1 = new Label();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,6 +46,24 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(480, 296);
             flowLayoutPanel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(59, 25);
+            label1.TabIndex = 1;
+            label1.Text = "label1";
+            // 
+            // button3
+            // 
+            button3.Location = new Point(3, 28);
+            button3.Name = "button3";
+            button3.Size = new Size(112, 34);
+            button3.TabIndex = 0;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -74,28 +92,11 @@
             Back_bttn.Text = "Back";
             Back_bttn.UseVisualStyleBackColor = true;
             // 
-            // button3
-            // 
-            button3.Location = new Point(3, 28);
-            button3.Name = "button3";
-            button3.Size = new Size(112, 34);
-            button3.TabIndex = 0;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(59, 25);
-            label1.TabIndex = 1;
-            label1.Text = "label1";
-            // 
             // SaveScreen
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.PaleVioletRed;
             ClientSize = new Size(692, 450);
             Controls.Add(Back_bttn);
             Controls.Add(button2);
