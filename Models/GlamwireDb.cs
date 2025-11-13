@@ -61,11 +61,11 @@ public class GlamwireDb
                     // go through each column of the NPC table
                     // and read the data (if any) into the npc object properties.
                     NPCId = npcId,
-                    NPCFirstName = reader["NPCFirstName"].ToString(),
-                    NPCLastName = reader["NPCLastName"].ToString(),
-                    NPCUsername = reader["NPCUsername"].ToString(),
-                    NPCRole = reader["NPCRole"].ToString(),
-                    PersonalityType = reader["PersonalityType"].ToString(),
+                    NPCFirstName = Convert.ToString(reader["NPCFirstName"]),
+                    NPCLastName = Convert.ToString(reader["NPCLastName"]),
+                    NPCUsername = Convert.ToString(reader["NPCUsername"]),
+                    NPCRole = Convert.ToString(reader["NPCRole"]),
+                    PersonalityType = Convert.ToString(reader["PersonalityType"]),
                     IsLocked = Convert.ToBoolean(reader["IsLocked"]),
                     IsGuilty = Convert.ToBoolean(reader["isGuilty"]),
                 });
@@ -82,6 +82,7 @@ public class GlamwireDb
 
     // retrieve NPCs, case by case. The rest will remain locked/unpopulated, 
     // if they are not involved in the case.
+
     // add method here (GetNPCsForCase()) to retrieve NPCs for a specific case.
 
     // retrieve all cases from the database, then we can filter them later active or locked.
