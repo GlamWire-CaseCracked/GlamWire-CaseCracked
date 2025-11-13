@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GlamWire_Case_Cracked
 {
-    public partial class SaveScreen : Form
+    public partial class SaveFileForm : Form
     {
-        public SaveScreen()
+        public SaveFileForm()
         {
             InitializeComponent();
         }

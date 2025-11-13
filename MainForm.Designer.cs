@@ -1,6 +1,6 @@
 ﻿namespace GlamWire_Case_Cracked
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -43,6 +43,7 @@
             NewGame_bttn.TabIndex = 0;
             NewGame_bttn.Text = "New Game";
             NewGame_bttn.UseVisualStyleBackColor = true;
+            NewGame_bttn.Click += NewGame_bttn_Click_1;
             // 
             // LoadGame_bttn
             // 
@@ -52,6 +53,7 @@
             LoadGame_bttn.TabIndex = 1;
             LoadGame_bttn.Text = "Load Game";
             LoadGame_bttn.UseVisualStyleBackColor = true;
+            LoadGame_bttn.Click += this.LoadGame_bttn_Click;
             // 
             // Exit_bttn
             // 
@@ -88,7 +90,7 @@
             SubTitle_lbl.Text = "Case Cracked";
             SubTitle_lbl.TextAlign = ContentAlignment.TopCenter;
             // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -99,7 +101,7 @@
             Controls.Add(Exit_bttn);
             Controls.Add(LoadGame_bttn);
             Controls.Add(NewGame_bttn);
-            Name = "Form1";
+            Name = "MainForm";
             Text = "GlamWire : Case Cracked";
             ResumeLayout(false);
             PerformLayout();

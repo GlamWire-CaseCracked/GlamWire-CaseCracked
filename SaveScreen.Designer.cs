@@ -1,6 +1,6 @@
 ﻿namespace GlamWire_Case_Cracked
 {
-    partial class SaveScreen
+    partial class SaveFileForm
     {
         /// <summary>
         /// Required designer variable.
@@ -92,7 +92,7 @@
             Back_bttn.Text = "Back";
             Back_bttn.UseVisualStyleBackColor = true;
             // 
-            // SaveScreen
+            // SaveFileForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -102,7 +102,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(flowLayoutPanel1);
-            Name = "SaveScreen";
+            Name = "SaveFileForm";
             Text = "Save Files";
             Load += SaveScreen_Load;
             flowLayoutPanel1.ResumeLayout(false);
