@@ -31,6 +31,8 @@ public class GlamwireDb
         }
     }
 
+
+    // retrieve all NPCs from the database
     public List<NPC> RetrieveAllNPCs(int npcId)
     {
         List<NPC> npcs = new List<NPC>();
@@ -38,8 +40,8 @@ public class GlamwireDb
         // placeholder to retrieve all NPCs from the database to populate and move them.
         // // "hey program, try using the connection string to connect to the database"
         try
-        { 
-            using SqlConnection connection = new SqlConnection (connectionString);
+        {
+            using SqlConnection connection = new SqlConnection(connectionString);
             // open the connection (a bridge to the database)
             connection.Open();
 
@@ -64,13 +66,13 @@ public class GlamwireDb
                     NPCUsername = reader["NPCUsername"].ToString(),
                     NPCRole = reader["NPCRole"].ToString(),
                     PersonalityType = reader["PersonalityType"].ToString(),
-                    IsLocked = (bool)reader["IsLocked"],
-                    IsGuilty = (bool)reader["IsGuilty"],
+                    IsLocked = Convert.ToBoolean(reader["IsLocked"]),
+                    IsGuilty = Convert.ToBoolean(reader["isGuilty"]),
                 });
             }
         }
 
-        catch (Exception ex){
+        catch (Exception ex) {
 
             // I think copying the generic exception handler is fine for now.
             Console.WriteLine($"An error occurred while connecting to the database: {ex.Message}");
@@ -78,13 +80,58 @@ public class GlamwireDb
         return npcs;
     }
 
+    // retrieve NPCs, case by case. The rest will remain locked/unpopulated, 
+    // if they are not involved in the case.
+    // add method here (GetNPCsForCase()) to retrieve NPCs for a specific case.
 
-    public Case RetrieveActiveCase(int caseId) {
-
+    // retrieve all cases from the database, then we can filter them later active or locked.
+    public List<Case> RetrieveActiveCase(int caseId) {
+        
         // placeholder to retrieve all cases from the database to populate and move them. 
+        Case cases = new();
+            try
+            {
+                using SqlConnection connection = new SqlConnection(connectionString);
+                // open the connection (a bridge to the database)
+                connection.Open();
 
-        // null return (CHANGES NEEDED) 
-        return null;
+                // create the query to reference the Case table, just for readability.
+                string query = @"SELECT * FROM Cases";
+                using SqlCommand cmd = new SqlCommand(query, connection);
+            // use the reader to execute the command and read it from the database.
+                using SqlDataReader reader = cmd.ExecuteReader();
+
+            // use a while loop to read each row of data. 
+            // while there is data to read, keep reading it. 
+            // if not, exit the loop.
+            // apparently, ID is all caps.. my mistake
+
+            // go through each column of the NPC table
+            // and read the data (if any) into the npc object properties.
+            while (reader.Read())
+            {
+                int caseId = Convert.ToInt32(reader["CaseID"]);
+
+                cases.Add(new Case
+                {
+                    CaseID = caseId,
+                    CaseTitle = reader["CaseTitle"].ToString(),
+                    CaseSummary = reader["CaseSummary"].ToString(),
+                    Difficulty = Convert.ToInt32(reader["Difficulty"]),
+                    Reward = Convert.ToInt32(reader["Reward"]),
+                    IsSolved = Convert.ToBoolean(reader["IsSolved"]),
+                    SaveFile = Convert.ToInt32(reader["SaveFile"]),
+                    InvolvedNPCs = GetNPCsForCase(caseId, connectionString) // populate the list
+                });
+            }
+        }
+            catch (Exception ex)
+            {
+                // I think copying the generic exception handler is fine for now.
+                Console.WriteLine($"An error occurred while connecting to the database: {ex.Message}");
+            }
+            // null return (CHANGES NEEDED) 
+            return cases;
+        }
     }
-
 }
