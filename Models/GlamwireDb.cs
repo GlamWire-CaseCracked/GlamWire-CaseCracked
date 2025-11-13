@@ -110,11 +110,9 @@ public class GlamwireDb
             // and read the data (if any) into the npc object properties.
             while (reader.Read())
             {
-                int caseId = Convert.ToInt32(reader["CaseID"]);
-
                 cases.Add(new Case
                 {
-                    CaseID = caseId,
+                    CaseID = Convert.ToInt32(reader["CaseID"]),
                     CaseTitle = reader["CaseTitle"].ToString(),
                     CaseSummary = reader["CaseSummary"].ToString(),
                     Difficulty = Convert.ToInt32(reader["Difficulty"]),
