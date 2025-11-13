@@ -88,18 +88,18 @@ public class GlamwireDb
     public List<Case> RetrieveActiveCase(int caseId) {
         
         // placeholder to retrieve all cases from the database to populate and move them. 
-        Case cases = new();
-            try
-            {
-                using SqlConnection connection = new SqlConnection(connectionString);
-                // open the connection (a bridge to the database)
-                connection.Open();
+        List<Case> cases = new();
+        try
+        {
+            using SqlConnection connection = new SqlConnection(connectionString);
+            // open the connection (a bridge to the database)
+            connection.Open();
 
-                // create the query to reference the Case table, just for readability.
-                string query = @"SELECT * FROM Cases";
-                using SqlCommand cmd = new SqlCommand(query, connection);
+            // create the query to reference the Case table, just for readability.
+            string query = @"SELECT * FROM Cases";
+            using SqlCommand cmd = new SqlCommand(query, connection);
             // use the reader to execute the command and read it from the database.
-                using SqlDataReader reader = cmd.ExecuteReader();
+            using SqlDataReader reader = cmd.ExecuteReader();
 
             // use a while loop to read each row of data. 
             // while there is data to read, keep reading it. 
@@ -123,13 +123,14 @@ public class GlamwireDb
                 });
             }
         }
-            catch (Exception ex)
-            {
-                // I think copying the generic exception handler is fine for now.
-                Console.WriteLine($"An error occurred while connecting to the database: {ex.Message}");
-            }
-            // null return (CHANGES NEEDED) 
-            return cases;
+
+        catch (Exception ex)
+        {
+            // I think copying the generic exception handler is fine for now.
+            Console.WriteLine($"An error occurred while connecting to the database: {ex.Message}");
         }
+        // null return (CHANGES NEEDED) 
+        return cases;
     }
 }
+
