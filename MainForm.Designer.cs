@@ -39,58 +39,58 @@
             // 
             // NewGame_bttn
             // 
-            NewGame_bttn.Location = new Point(270, 180);
-            NewGame_bttn.Name = "NewGame_bttn";
-            NewGame_bttn.Size = new Size(253, 60);
-            NewGame_bttn.TabIndex = 0;
-            NewGame_bttn.Text = "New Game";
-            NewGame_bttn.UseVisualStyleBackColor = true;
-            NewGame_bttn.Click += NewGame_bttn_Click_1;
+            btnNewGame.Location = new Point(270, 180);
+            btnNewGame.Name = "NewGame_bttn";
+            btnNewGame.Size = new Size(253, 60);
+            btnNewGame.TabIndex = 0;
+            btnNewGame.Text = "New Game";
+            btnNewGame.UseVisualStyleBackColor = true;
+            btnNewGame.Click += NewGame_bttn_Click_1;
             // 
             // LoadGame_bttn
             // 
-            LoadGame_bttn.Location = new Point(270, 265);
-            LoadGame_bttn.Name = "LoadGame_bttn";
-            LoadGame_bttn.Size = new Size(253, 60);
-            LoadGame_bttn.TabIndex = 1;
-            LoadGame_bttn.Text = "Load Game";
-            LoadGame_bttn.UseVisualStyleBackColor = true;
-            LoadGame_bttn.Click += this.LoadGame_bttn_Click;
+            btnLoadGame.Location = new Point(270, 265);
+            btnLoadGame.Name = "LoadGame_bttn";
+            btnLoadGame.Size = new Size(253, 60);
+            btnLoadGame.TabIndex = 1;
+            btnLoadGame.Text = "Load Game";
+            btnLoadGame.UseVisualStyleBackColor = true;
+            btnLoadGame.Click += this.LoadGame_bttn_Click;
             // 
             // Exit_bttn
             // 
-            Exit_bttn.Location = new Point(270, 347);
-            Exit_bttn.Name = "Exit_bttn";
-            Exit_bttn.Size = new Size(253, 60);
-            Exit_bttn.TabIndex = 2;
-            Exit_bttn.Text = "Exit";
-            Exit_bttn.UseVisualStyleBackColor = true;
-            Exit_bttn.Click += Exit_bttn_Click;
+            btnExit.Location = new Point(270, 347);
+            btnExit.Name = "Exit_bttn";
+            btnExit.Size = new Size(253, 60);
+            btnExit.TabIndex = 2;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += Exit_bttn_Click;
             // 
             // Title_lbl
             // 
-            Title_lbl.AutoSize = true;
-            Title_lbl.Font = new Font("Bauhaus 93", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Title_lbl.ForeColor = Color.Lavender;
-            Title_lbl.Location = new Point(230, 24);
-            Title_lbl.Name = "Title_lbl";
-            Title_lbl.Size = new Size(340, 82);
-            Title_lbl.TabIndex = 3;
-            Title_lbl.Text = "GlamWire";
-            Title_lbl.TextAlign = ContentAlignment.TopCenter;
-            Title_lbl.Click += label1_Click;
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Bauhaus 93", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.Lavender;
+            lblTitle.Location = new Point(230, 24);
+            lblTitle.Name = "Title_lbl";
+            lblTitle.Size = new Size(340, 82);
+            lblTitle.TabIndex = 3;
+            lblTitle.Text = "GlamWire";
+            lblTitle.TextAlign = ContentAlignment.TopCenter;
+            lblTitle.Click += label1_Click;
             // 
             // SubTitle_lbl
             // 
-            SubTitle_lbl.AutoSize = true;
-            SubTitle_lbl.Font = new Font("Century Gothic", 24F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            SubTitle_lbl.ForeColor = Color.Azure;
-            SubTitle_lbl.Location = new Point(220, 106);
-            SubTitle_lbl.Name = "SubTitle_lbl";
-            SubTitle_lbl.Size = new Size(365, 57);
-            SubTitle_lbl.TabIndex = 4;
-            SubTitle_lbl.Text = "Case Cracked";
-            SubTitle_lbl.TextAlign = ContentAlignment.TopCenter;
+            lblSubTitle.AutoSize = true;
+            lblSubTitle.Font = new Font("Century Gothic", 24F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblSubTitle.ForeColor = Color.Azure;
+            lblSubTitle.Location = new Point(220, 106);
+            lblSubTitle.Name = "SubTitle_lbl";
+            lblSubTitle.Size = new Size(365, 57);
+            lblSubTitle.TabIndex = 4;
+            lblSubTitle.Text = "Case Cracked";
+            lblSubTitle.TextAlign = ContentAlignment.TopCenter;
             // 
             // MainForm
             // 
@@ -98,11 +98,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 174, 200);
             ClientSize = new Size(800, 450);
-            Controls.Add(SubTitle_lbl);
-            Controls.Add(Title_lbl);
-            Controls.Add(Exit_bttn);
-            Controls.Add(LoadGame_bttn);
-            Controls.Add(NewGame_bttn);
+            Controls.Add(lblSubTitle);
+            Controls.Add(lblTitle);
+            Controls.Add(btnExit);
+            Controls.Add(btnLoadGame);
+            Controls.Add(btnNewGame);
             Name = "MainForm";
             Text = "GlamWire : Case Cracked";
             ResumeLayout(false);
