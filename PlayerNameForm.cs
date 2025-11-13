@@ -16,5 +16,14 @@ namespace GlamWire_Case_Cracked
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // this is just going to redirect to the main form 
+            // copy this to all back buttons.
+            this.Hide(); // this hides the current form 
+            var MainForm = new MainForm(); // create a new MainForm instance
+            MainForm.Show();// show the Mainform again. 
+        }
     }
 }

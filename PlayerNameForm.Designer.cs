@@ -31,7 +31,7 @@
             Credentials_lbl = new Label();
             PlayerName_txtbox = new TextBox();
             StartNewGame_btn = new Button();
-            button2 = new Button();
+            Back_bttn2 = new Button();
             SuspendLayout();
             // 
             // Credentials_lbl
@@ -61,14 +61,15 @@
             StartNewGame_btn.Text = "Start";
             StartNewGame_btn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // Back_bttn2
             // 
-            button2.Location = new Point(35, 33);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 3;
-            button2.Text = "Back";
-            button2.UseVisualStyleBackColor = true;
+            Back_bttn2.Location = new Point(35, 33);
+            Back_bttn2.Name = "Back_bttn2";
+            Back_bttn2.Size = new Size(112, 34);
+            Back_bttn2.TabIndex = 3;
+            Back_bttn2.Text = "Back";
+            Back_bttn2.UseVisualStyleBackColor = true;
+            Back_bttn2.Click += button2_Click;
             // 
             // PlayerNameForm
             // 
@@ -76,7 +77,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PaleVioletRed;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
+            Controls.Add(Back_bttn2);
             Controls.Add(StartNewGame_btn);
             Controls.Add(PlayerName_txtbox);
             Controls.Add(Credentials_lbl);
@@ -91,6 +92,6 @@
         private Label Credentials_lbl;
         private TextBox PlayerName_txtbox;
         private Button StartNewGame_btn;
-        private Button button2;
+        private Button Back_bttn2;
     }
 }

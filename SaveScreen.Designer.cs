@@ -91,6 +91,7 @@
             Back_bttn.TabIndex = 3;
             Back_bttn.Text = "Back";
             Back_bttn.UseVisualStyleBackColor = true;
+            Back_bttn.Click += Back_bttn_Click;
             // 
             // SaveFileForm
             // 
