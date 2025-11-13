@@ -82,7 +82,10 @@ public class GlamwireDb
 
     // retrieve NPCs, case by case. The rest will remain locked/unpopulated, 
     // if they are not involved in the case.
-
+    public List<NPC> GetNPCsForCase(int caseId, string connectionString)
+    {// placeholder to retrieve all NPCs from the database to populate and move them.
+        return null;
+    }
     // add method here (GetNPCsForCase()) to retrieve NPCs for a specific case.
 
     // retrieve all cases from the database, then we can filter them later active or locked.
