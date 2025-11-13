@@ -18,15 +18,24 @@ public class SaveFile
 
     // properties for the savefile needed to load a game
     public int SaveFileID { get; set; }
+
+    /// <summary>
+    /// The inserted player name for the save file.
+    /// </summary>
     public required string PlayerName { get; set; }
     public string? SaveFileName { get; set; } = string.Empty; 
     public int Wallet { get; set; }
+
+    // LastPlayed = Last time the user played/saved the game
     public DateTime LastPlayed { get; set; }
     public int SolvedCases { get; set; }
 
 
-    // override the ToString method for easy display, 
-    // and so that when we load the save files we can see relevant info
+    /// <summary>
+    /// This overrides the ToString method to provide a formatted string
+    /// representation of the SaveFile object,
+    /// </summary>
+    /// <returns></returns>
     public override string ToString()
     {
 

@@ -32,7 +32,11 @@ public class GlamwireDb
     }
 
 
-    // retrieve all NPCs from the database
+    /// <summary>
+    /// Retrieve all NPCs from the database
+    /// </summary>
+    /// <param name="npcId"></param>
+    /// <returns></returns>
     public List<NPC> RetrieveAllNPCs(int npcId)
     {
         List<NPC> npcs = new List<NPC>();
@@ -80,15 +84,31 @@ public class GlamwireDb
         return npcs;
     }
 
-    // retrieve NPCs, case by case. The rest will remain locked/unpopulated, 
-    // if they are not involved in the case.
+
+    /// <summary>
+    /// Retrieves a list of NPCs associated with a specific case.
+    /// Typically, an active case. 
+    /// </summary>
+    /// <param name="caseId">The identifier of the case for which to retrieve NPCs.</param>
+    /// <param name="connectionString">The connection string used to access the database.</param>
+    /// <returns>A list of <see cref="NPC"/> objects involved in the specified case. Returns an empty list if no NPCs are
+    /// associated with the case.</returns>
     public List<NPC> GetNPCsForCase(int caseId, string connectionString)
     {// placeholder to retrieve all NPCs from the database to populate and move them.
         return null;
     }
-    // add method here (GetNPCsForCase()) to retrieve NPCs for a specific case.
 
-    // retrieve all cases from the database, then we can filter them later active or locked.
+
+
+    /// <summary>
+    /// Retrieves a list of active cases from the database.
+    /// </summary>
+    /// <remarks>This method connects to the database to retrieve all cases and filters them based on their
+    /// active status. It populates each case with its associated non-player characters (NPCs) using the
+    /// <c>GetNPCsForCase</c> method.</remarks>
+    /// <param name="caseId">The unique identifier of the case to retrieve.</param>
+    /// <returns>A list of <see cref="Case"/> objects representing the active cases. The list will be empty if no active cases
+    /// are found.</returns>
     public List<Case> RetrieveActiveCase(int caseId) {
         
         // placeholder to retrieve all cases from the database to populate and move them. 
@@ -122,7 +142,7 @@ public class GlamwireDb
                     Difficulty = Convert.ToInt32(reader["Difficulty"]),
                     Reward = Convert.ToInt32(reader["Reward"]),
                     IsSolved = Convert.ToBoolean(reader["IsSolved"]),
-                    SaveFile = Convert.ToInt32(reader["SaveFile"]),
+                    SaveFile = Convert.ToInt32(reader["SaveFile"]), // retrieving the save file Id ONLY
                     InvolvedNPCs = GetNPCsForCase(caseId, connectionString) // populate the list
                 });
             }

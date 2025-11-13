@@ -24,7 +24,7 @@ public class Case
     public required string CaseSummary { get; set; }
     // The difficulty level of the case (1-5)
     public required int Difficulty { get; set; }
-    //
+    // The reward in an integer amount to keep it simple. 
     public required int Reward { get; set; }
     // Indicates if the case has been solved in that save file 
     public required bool IsSolved { get; set; }
