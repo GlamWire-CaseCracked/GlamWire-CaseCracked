@@ -27,7 +27,7 @@ public class GlamwireDb
         catch (Exception ex)
         {
             // Handle exceptions related to database connection and data retrieval
-            Console.WriteLine($"An error occurred while connecting to the database: {ex.Message}");
+            MessageBox.Show($"An error occurred while connecting to the database: {ex.Message}");
         }
     }
 
@@ -79,7 +79,7 @@ public class GlamwireDb
         catch (Exception ex) {
 
             // I think copying the generic exception handler is fine for now.
-            Console.WriteLine($"An error occurred while connecting to the database: {ex.Message}");
+            MessageBox.Show($"An error occurred while connecting to the database: {ex.Message}");
         }
         return npcs;
     }
@@ -151,7 +151,7 @@ public class GlamwireDb
         catch (Exception ex)
         {
             // I think copying the generic exception handler is fine for now.
-            Console.WriteLine($"An error occurred while connecting to the database: {ex.Message}");
+            MessageBox.Show($"An error occurred while connecting to the database: {ex.Message}");
         }
         // null return (CHANGES NEEDED) 
         return cases;
