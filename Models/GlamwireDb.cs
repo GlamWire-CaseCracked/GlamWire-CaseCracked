@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
+using System.Web;
 
 namespace GlamWire_Case_Cracked.Models;
 
@@ -64,7 +65,7 @@ public class GlamwireDb
                 npcs.Add(new NPC {
                     // go through each column of the NPC table
                     // and read the data (if any) into the npc object properties.
-                    NPCId = npcId,
+                    NPCId = Convert.ToInt32(reader["NPCId"]),
                     NPCFirstName = Convert.ToString(reader["NPCFirstName"]),
                     NPCLastName = Convert.ToString(reader["NPCLastName"]),
                     NPCUsername = Convert.ToString(reader["NPCUsername"]),
@@ -94,11 +95,30 @@ public class GlamwireDb
     /// <returns>A list of <see cref="NPC"/> objects involved in the specified case. Returns an empty list if no NPCs are
     /// associated with the case.</returns>
     public List<NPC> GetNPCsForCase(int caseId, string connectionString)
-    {// placeholder to retrieve all NPCs from the database to populate and move them.
-        return null;
+    { 
+        List<NPC> caseNPCS = new List<NPC>();
+
+        try
+        {
+            using SqlConnection connection = new SqlConnection(connectionString);
+            // open the connection (a bridge to the database)
+            connection.Open();
+
+            // create a string query that selects from NPC WHERE the caseid and that NPC match
+            // combine both the Case and the NPC table to make CaseNPC
+            string query = @"SELECT n.* FROM NPC n
+                              INNER JOIN CaseNPC cn ON n.NPCId = cn.NPCId
+                             WHERE cn.CaseId = @caseId";
+            // create command line w/ params (to the caseId)
+            using SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue(@"caseId", caseId);
+        }
+        catch (SqlException ex)
+        {
+            MessageBox.Show(($"An error occurred while trying to JOIN NPC/Cases from database: {ex.Message}"));
+        }
+            return caseNPCS;
     }
-
-
 
     /// <summary>
     /// Retrieves a list of active cases from the database.
