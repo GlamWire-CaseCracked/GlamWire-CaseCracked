@@ -24,7 +24,7 @@ public class GlamwireDb
             // Code to connect to the database and retrieve data goes here
             using SqlConnection connection = new SqlConnection(connectionString);
         }
-        catch (Exception ex)
+        catch (SqlException ex)
         {
             // Handle exceptions related to database connection and data retrieval
             MessageBox.Show($"An error occurred while connecting to the database: {ex.Message}");
@@ -76,7 +76,7 @@ public class GlamwireDb
             }
         }
 
-        catch (Exception ex) {
+        catch (SqlException ex) {
 
             // I think copying the generic exception handler is fine for now.
             MessageBox.Show($"An error occurred while connecting to the database: {ex.Message}");
@@ -148,7 +148,7 @@ public class GlamwireDb
             }
         }
 
-        catch (Exception ex)
+        catch (SqlException ex)
         {
             // I think copying the generic exception handler is fine for now.
             MessageBox.Show($"An error occurred while connecting to the database: {ex.Message}");
