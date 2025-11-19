@@ -37,60 +37,74 @@
             btnSettings = new Button();
             SuspendLayout();
             // 
-            // NewGame_bttn
+            // btnNewGame
             // 
             btnNewGame.Location = new Point(270, 180);
-            btnNewGame.Name = "NewGame_bttn";
+            btnNewGame.Name = "btnNewGame";
             btnNewGame.Size = new Size(253, 60);
             btnNewGame.TabIndex = 0;
             btnNewGame.Text = "New Game";
             btnNewGame.UseVisualStyleBackColor = true;
             btnNewGame.Click += NewGame_bttn_Click_1;
             // 
-            // LoadGame_bttn
+            // btnLoadGame
             // 
             btnLoadGame.Location = new Point(270, 265);
-            btnLoadGame.Name = "LoadGame_bttn";
+            btnLoadGame.Name = "btnLoadGame";
             btnLoadGame.Size = new Size(253, 60);
             btnLoadGame.TabIndex = 1;
             btnLoadGame.Text = "Load Game";
             btnLoadGame.UseVisualStyleBackColor = true;
-            btnLoadGame.Click += this.LoadGame_bttn_Click;
+            btnLoadGame.Click += LoadGame_bttn_Click;
             // 
-            // Exit_bttn
+            // btnExit
             // 
             btnExit.Location = new Point(270, 347);
-            btnExit.Name = "Exit_bttn";
+            btnExit.Name = "btnExit";
             btnExit.Size = new Size(253, 60);
             btnExit.TabIndex = 2;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += Exit_bttn_Click;
             // 
-            // Title_lbl
+            // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Bauhaus 93", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitle.ForeColor = Color.Lavender;
-            lblTitle.Location = new Point(230, 24);
-            lblTitle.Name = "Title_lbl";
-            lblTitle.Size = new Size(340, 82);
+            lblTitle.Font = new Font("Elephant", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.HotPink;
+            lblTitle.Location = new Point(186, 40);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(444, 93);
             lblTitle.TabIndex = 3;
-            lblTitle.Text = "GlamWire";
+            lblTitle.Text = "GlamWire:";
             lblTitle.TextAlign = ContentAlignment.TopCenter;
             lblTitle.Click += label1_Click;
             // 
-            // SubTitle_lbl
+            // lblSubTitle
             // 
             lblSubTitle.AutoSize = true;
-            lblSubTitle.Font = new Font("Century Gothic", 24F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblSubTitle.Font = new Font("Broadway", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblSubTitle.ForeColor = Color.Azure;
-            lblSubTitle.Location = new Point(220, 106);
-            lblSubTitle.Name = "SubTitle_lbl";
-            lblSubTitle.Size = new Size(365, 57);
+            lblSubTitle.Location = new Point(218, 122);
+            lblSubTitle.Name = "lblSubTitle";
+            lblSubTitle.Size = new Size(376, 55);
             lblSubTitle.TabIndex = 4;
             lblSubTitle.Text = "Case Cracked";
             lblSubTitle.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // btnContinue
+            // 
+            btnContinue.Location = new Point(0, 0);
+            btnContinue.Name = "btnContinue";
+            btnContinue.Size = new Size(75, 23);
+            btnContinue.TabIndex = 0;
+            // 
+            // btnSettings
+            // 
+            btnSettings.Location = new Point(0, 0);
+            btnSettings.Name = "btnSettings";
+            btnSettings.Size = new Size(75, 23);
+            btnSettings.TabIndex = 0;
             // 
             // MainForm
             // 

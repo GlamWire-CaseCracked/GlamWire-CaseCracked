@@ -97,7 +97,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.PaleVioletRed;
+            BackColor = Color.FromArgb(255, 174, 200);
             ClientSize = new Size(692, 450);
             Controls.Add(Back_bttn);
             Controls.Add(button2);
