@@ -38,4 +38,4 @@ public class Case
     // retreives the save file associated with this case
     public required int SaveFile { get; set; }
 
-    }
+}
