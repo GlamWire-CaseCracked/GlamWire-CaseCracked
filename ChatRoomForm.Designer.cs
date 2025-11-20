@@ -37,6 +37,7 @@
             NPCLog_box = new ListBox();
             label4 = new Label();
             label5 = new Label();
+            label6 = new Label();
             SuspendLayout();
             // 
             // textBox1
@@ -46,6 +47,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(436, 79);
             textBox1.TabIndex = 0;
+            textBox1.Text = "Choose Prompt to Reply:";
             // 
             // Send_bttn
             // 
@@ -111,17 +113,27 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(47, 618);
+            label5.Location = new Point(38, 618);
             label5.Name = "label5";
-            label5.Size = new Size(244, 25);
+            label5.Size = new Size(254, 25);
             label5.TabIndex = 8;
-            label5.Text = "placeholder* PROMPTS HERE";
+            label5.Text = "placeholder* PROMPTS HERE1";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(310, 618);
+            label6.Name = "label6";
+            label6.Size = new Size(254, 25);
+            label6.TabIndex = 9;
+            label6.Text = "placeholder* PROMPTS HERE2";
             // 
             // ChatRoomForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(614, 669);
+            Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(NPCLog_box);
@@ -132,7 +144,7 @@
             Controls.Add(ChatLog_box);
             Controls.Add(textBox1);
             Name = "ChatRoomForm";
-            Text = "Chat";
+            Text = "Chatroom";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -148,5 +160,6 @@
         private ListBox NPCLog_box;
         private Label label4;
         private Label label5;
+        private Label label6;
     }
 }

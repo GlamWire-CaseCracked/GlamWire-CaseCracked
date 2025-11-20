@@ -40,7 +40,7 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            label6 = new Label();
+            Trash_lbl = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -51,7 +51,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.pixelfolder;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(74, 99);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(83, 74);
@@ -61,7 +61,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.pixelfolder;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(74, 214);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(83, 74);
@@ -71,7 +71,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.pixelfolder;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(74, 325);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(83, 74);
@@ -81,7 +81,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.pixelfolder;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(210, 99);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(83, 74);
@@ -91,7 +91,7 @@
             // 
             // pictureBox5
             // 
-            pictureBox5.Image = Properties.Resources.pixelfolder;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
             pictureBox5.Location = new Point(210, 214);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(83, 74);
@@ -155,14 +155,14 @@
             label5.TabIndex = 10;
             label5.Text = "label5";
             // 
-            // label6
+            // Trash_lbl
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(1141, 696);
-            label6.Name = "label6";
-            label6.Size = new Size(59, 25);
-            label6.TabIndex = 11;
-            label6.Text = "label6";
+            Trash_lbl.AutoSize = true;
+            Trash_lbl.Location = new Point(1144, 696);
+            Trash_lbl.Name = "Trash_lbl";
+            Trash_lbl.Size = new Size(52, 25);
+            Trash_lbl.TabIndex = 11;
+            Trash_lbl.Text = "Trash";
             // 
             // GameStartupForm
             // 
@@ -170,7 +170,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 174, 200);
             ClientSize = new Size(1263, 761);
-            Controls.Add(label6);
+            Controls.Add(Trash_lbl);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -207,6 +207,6 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private Label label6;
+        private Label Trash_lbl;
     }
 }
