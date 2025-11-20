@@ -72,9 +72,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(47, 46);
             label2.Name = "label2";
-            label2.Size = new Size(59, 25);
+            label2.Size = new Size(111, 25);
             label2.TabIndex = 4;
-            label2.Text = "label2";
+            label2.Text = "Player Name";
             // 
             // label3
             // 
@@ -113,7 +113,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(38, 618);
+            label5.Location = new Point(34, 618);
             label5.Name = "label5";
             label5.Size = new Size(254, 25);
             label5.TabIndex = 8;
@@ -132,7 +132,8 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(614, 669);
+            BackColor = Color.FromArgb(255, 174, 200);
+            ClientSize = new Size(621, 677);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);

@@ -33,7 +33,7 @@
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
+            GWIcon_picBox = new PictureBox();
             pictureBox6 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
@@ -45,7 +45,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)GWIcon_picBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
@@ -89,15 +89,15 @@
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
             // 
-            // pictureBox5
+            // GWIcon_picBox
             // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(210, 214);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(83, 74);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 4;
-            pictureBox5.TabStop = false;
+            GWIcon_picBox.Image = (Image)resources.GetObject("GWIcon_picBox.Image");
+            GWIcon_picBox.Location = new Point(210, 214);
+            GWIcon_picBox.Name = "GWIcon_picBox";
+            GWIcon_picBox.Size = new Size(83, 74);
+            GWIcon_picBox.SizeMode = PictureBoxSizeMode.Zoom;
+            GWIcon_picBox.TabIndex = 4;
+            GWIcon_picBox.TabStop = false;
             // 
             // pictureBox6
             // 
@@ -140,11 +140,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(222, 291);
+            label4.Location = new Point(197, 291);
             label4.Name = "label4";
-            label4.Size = new Size(59, 25);
+            label4.Size = new Size(115, 25);
             label4.TabIndex = 9;
-            label4.Text = "label4";
+            label4.Text = "Glamwire.exe";
             // 
             // label5
             // 
@@ -177,7 +177,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox6);
-            Controls.Add(pictureBox5);
+            Controls.Add(GWIcon_picBox);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
@@ -188,7 +188,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)GWIcon_picBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -200,7 +200,7 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
+        private PictureBox GWIcon_picBox;
         private PictureBox pictureBox6;
         private Label label1;
         private Label label2;
