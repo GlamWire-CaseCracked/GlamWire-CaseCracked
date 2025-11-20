@@ -60,6 +60,7 @@
             StartNewGame_btn.TabIndex = 2;
             StartNewGame_btn.Text = "Start";
             StartNewGame_btn.UseVisualStyleBackColor = true;
+            StartNewGame_btn.Click += StartNewGame_btn_Click;
             // 
             // Back_bttn2
             // 

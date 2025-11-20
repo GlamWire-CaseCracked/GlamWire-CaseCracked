@@ -25,5 +25,12 @@ namespace GlamWire_Case_Cracked
             var MainForm = new MainForm(); // create a new MainForm instance
             MainForm.Show();// show the Mainform again. 
         }
+
+        private void StartNewGame_btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var GameStartupForm = new GameStartupForm();
+            GameStartupForm.Show();
+        }
     }
 }
