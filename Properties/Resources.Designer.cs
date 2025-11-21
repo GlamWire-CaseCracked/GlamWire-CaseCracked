@@ -63,6 +63,26 @@ namespace GlamWire_Case_Cracked.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pixel_trashacan {
+            get {
+                object obj = ResourceManager.GetObject("pixel-trashacan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pixel_trashcan {
+            get {
+                object obj = ResourceManager.GetObject("pixel-trashcan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pixelart_trashcan {
             get {
                 object obj = ResourceManager.GetObject("pixelart-trashcan", resourceCulture);

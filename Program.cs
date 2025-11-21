@@ -17,7 +17,7 @@ namespace GlamWire_Case_Cracked
             // see https://aka.ms/applicationconfiguration.
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+            Application.Run(new MainForm(GameContext.CurrentCaseId, GameContext.UnlockedNPCId, GameContext.ConnectionString));
         }
     }
 }

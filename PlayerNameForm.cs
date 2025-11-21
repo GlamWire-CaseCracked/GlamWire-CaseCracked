@@ -13,14 +13,9 @@ namespace GlamWire_Case_Cracked
 {
     public partial class PlayerNameForm : Form
     {
-        private int currentCaseId;
-        private int unlockedNPCId;
-        private string conn;
+
         public PlayerNameForm(int caseId, int npcId, string connectionString)
         {
-            currentCaseId = caseId;
-            unlockedNPCId = npcId;
-            conn = connectionString;
             InitializeComponent();
         }
 
@@ -35,7 +30,7 @@ namespace GlamWire_Case_Cracked
             // this is just going to redirect to the main form 
             // copy this to all back buttons.
             this.Hide(); // this hides the current form 
-            var MainForm = new MainForm(currentCaseId, unlockedNPCId, conn); // create a new MainForm instance
+            var MainForm = new MainForm(GameContext.CurrentCaseId, GameContext.UnlockedNPCId, GameContext.ConnectionString); // create a new MainForm instance
             MainForm.Show();// show the Mainform again. 
         }
 
@@ -68,7 +63,7 @@ namespace GlamWire_Case_Cracked
             // Proceed to startup game 
             this.Hide();
             // have the GameStarrupForm load a new Save as well. 
-            var GameStartupForm = new GameStartupForm(currentCaseId, unlockedNPCId, conn);
+            var GameStartupForm = new GameStartupForm(GameContext.CurrentCaseId, GameContext.UnlockedNPCId, GameContext.ConnectionString);
             GameStartupForm.Show();
         }
     }
