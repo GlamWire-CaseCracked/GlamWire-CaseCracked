@@ -29,65 +29,65 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameStartupForm));
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
+            Folder_picBox1 = new PictureBox();
+            Folder_picBox3 = new PictureBox();
+            Folder_picBox4 = new PictureBox();
+            Folder_picBox2 = new PictureBox();
             GWIcon_picBox = new PictureBox();
-            pictureBox6 = new PictureBox();
+            Trashcan_picBox = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             Trash_lbl = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Folder_picBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Folder_picBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Folder_picBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Folder_picBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GWIcon_picBox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Trashcan_picBox).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // Folder_picBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(74, 99);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(83, 74);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            Folder_picBox1.Image = (Image)resources.GetObject("Folder_picBox1.Image");
+            Folder_picBox1.Location = new Point(74, 99);
+            Folder_picBox1.Name = "Folder_picBox1";
+            Folder_picBox1.Size = new Size(83, 74);
+            Folder_picBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            Folder_picBox1.TabIndex = 0;
+            Folder_picBox1.TabStop = false;
             // 
-            // pictureBox2
+            // Folder_picBox3
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(74, 214);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(83, 74);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
+            Folder_picBox3.Image = (Image)resources.GetObject("Folder_picBox3.Image");
+            Folder_picBox3.Location = new Point(74, 214);
+            Folder_picBox3.Name = "Folder_picBox3";
+            Folder_picBox3.Size = new Size(83, 74);
+            Folder_picBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            Folder_picBox3.TabIndex = 1;
+            Folder_picBox3.TabStop = false;
             // 
-            // pictureBox3
+            // Folder_picBox4
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(74, 325);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(83, 74);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
+            Folder_picBox4.Image = (Image)resources.GetObject("Folder_picBox4.Image");
+            Folder_picBox4.Location = new Point(74, 325);
+            Folder_picBox4.Name = "Folder_picBox4";
+            Folder_picBox4.Size = new Size(83, 74);
+            Folder_picBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            Folder_picBox4.TabIndex = 2;
+            Folder_picBox4.TabStop = false;
             // 
-            // pictureBox4
+            // Folder_picBox2
             // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(210, 99);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(83, 74);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 3;
-            pictureBox4.TabStop = false;
+            Folder_picBox2.Image = (Image)resources.GetObject("Folder_picBox2.Image");
+            Folder_picBox2.Location = new Point(210, 99);
+            Folder_picBox2.Name = "Folder_picBox2";
+            Folder_picBox2.Size = new Size(83, 74);
+            Folder_picBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            Folder_picBox2.TabIndex = 3;
+            Folder_picBox2.TabStop = false;
             // 
             // GWIcon_picBox
             // 
@@ -99,16 +99,16 @@
             GWIcon_picBox.TabIndex = 4;
             GWIcon_picBox.TabStop = false;
             // 
-            // pictureBox6
+            // Trashcan_picBox
             // 
-            pictureBox6.ErrorImage = null;
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(1130, 619);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(83, 74);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 5;
-            pictureBox6.TabStop = false;
+            Trashcan_picBox.ErrorImage = null;
+            Trashcan_picBox.Image = (Image)resources.GetObject("Trashcan_picBox.Image");
+            Trashcan_picBox.Location = new Point(1130, 619);
+            Trashcan_picBox.Name = "Trashcan_picBox";
+            Trashcan_picBox.Size = new Size(83, 74);
+            Trashcan_picBox.SizeMode = PictureBoxSizeMode.Zoom;
+            Trashcan_picBox.TabIndex = 5;
+            Trashcan_picBox.TabStop = false;
             // 
             // label1
             // 
@@ -177,32 +177,32 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(pictureBox6);
+            Controls.Add(Trashcan_picBox);
             Controls.Add(GWIcon_picBox);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
+            Controls.Add(Folder_picBox2);
+            Controls.Add(Folder_picBox4);
+            Controls.Add(Folder_picBox3);
+            Controls.Add(Folder_picBox1);
             Name = "GameStartupForm";
             Text = "GameStartupForm";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Folder_picBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Folder_picBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Folder_picBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Folder_picBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)GWIcon_picBox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Trashcan_picBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
+        private PictureBox Folder_picBox1;
+        private PictureBox Folder_picBox3;
+        private PictureBox Folder_picBox4;
+        private PictureBox Folder_picBox2;
         private PictureBox GWIcon_picBox;
-        private PictureBox pictureBox6;
+        private PictureBox Trashcan_picBox;
         private Label label1;
         private Label label2;
         private Label label3;
