@@ -94,7 +94,7 @@ public class GlamwireDb
     /// <param name="connectionString">The connection string used to access the database.</param>
     /// <returns>A list of <see cref="NPC"/> objects involved in the specified case. Returns an empty list if no NPCs are
     /// associated with the case.</returns>
-    public List<NPC> GetNPCsForCase(int caseId, string connectionString)
+    public static List<NPC> GetNPCsForCase(int caseId, string connectionString)
     { 
         List<NPC> caseNPCS = new List<NPC>();
 
@@ -129,7 +129,7 @@ public class GlamwireDb
     /// <param name="caseId">The unique identifier of the case to retrieve.</param>
     /// <returns>A list of <see cref="Case"/> objects representing the active cases. The list will be empty if no active cases
     /// are found.</returns>
-    public List<Case> RetrieveActiveCase(int caseId) {
+    public List<Case> RetrieveActiveCase(int caseId, string connectionString) {
         
         // placeholder to retrieve all cases from the database to populate and move them. 
         List<Case> cases = new();
