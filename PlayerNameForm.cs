@@ -17,6 +17,12 @@ namespace GlamWire_Case_Cracked
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This is the back button for this form, it should redirect users to 
+        /// the previous form they are on. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             // this is just going to redirect to the main form 
@@ -54,6 +60,7 @@ namespace GlamWire_Case_Cracked
 
             // Proceed to startup game 
             this.Hide();
+            // have the GameStarrupForm load a new Save as well. 
             var GameStartupForm = new GameStartupForm();
             GameStartupForm.Show();
         }

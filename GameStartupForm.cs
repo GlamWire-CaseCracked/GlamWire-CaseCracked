@@ -16,5 +16,13 @@ namespace GlamWire_Case_Cracked
         {
             InitializeComponent();
         }
+
+        private void Glamwire_picBox_Click(object sender, EventArgs e)
+        {
+            var ChatRoomForm = new ChatRoomForm(); 
+            // shows the chatroom as a modal popup instead of just
+            // hiding the whole "Desktop"/ GameStartupForm
+            ChatRoomForm.ShowDialog();
+        }
     }
 }
