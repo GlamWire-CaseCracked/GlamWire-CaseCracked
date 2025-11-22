@@ -16,7 +16,10 @@ namespace GlamWire_Case_Cracked.Models;
 /// associated with a specific save file.</remarks>
 public class Case
 {
-    public required int CaseID { get; set; }
+    public required int CaseID { get; set; } = 1;
+
+    // navigation property for the Case Class => CASENPC
+    public ICollection<CaseNPC> CaseNPCs { get; set; }
 
     // The title of the case
     public required string CaseTitle { get; set; }
@@ -36,6 +39,6 @@ public class Case
     public required List<NPC> InvolvedNPCs { get; set; } = new();
 
     // retreives the save file associated with this case
-    public required int SaveFile { get; set; }
+    public SaveFile? SaveFile { get; set; }
 
 }

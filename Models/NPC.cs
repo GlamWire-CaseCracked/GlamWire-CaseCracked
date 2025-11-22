@@ -22,6 +22,10 @@ public class NPC
 {
     // primary key for the NPC
     public required int NPCId { get; set; } 
+
+    // navigation property for the NPC Class => CASENPC
+    public ICollection<CaseNPC> CaseNPCs { get; set; }
+
     public required string NPCFirstName { get; set; }
     public required string NPCLastName { get; set; }
 

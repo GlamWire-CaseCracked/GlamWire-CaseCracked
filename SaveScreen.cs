@@ -33,7 +33,8 @@ namespace GlamWire_Case_Cracked
         { // this is just going to redirect to the main form 
             // copy this to all back buttons.
             this.Hide(); // this hides the current form 
-            var MainForm = new MainForm(GameContext.CurrentCaseId, GameContext.UnlockedNPCId, GameContext.ConnectionString); // create a new MainForm instance
+            var MainForm = new MainForm(GameContext.CurrentCaseId.CaseID,
+                          GameContext.UnlockedNPCId.NPCId, GameContext.ConnectionString); // create a new MainForm instance
             MainForm.Show();// show the Mainform again. 
 
         }

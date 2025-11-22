@@ -1,11 +1,36 @@
 using GlamWire_Case_Cracked.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GlamWire_Case_Cracked;
 
 public partial class MainForm : Form
-{
+{   
+
+    /// <summary>
+    /// readonly int that retreives the caseId from the DBContext referenced
+    /// </summary>
+    private readonly int _caseId;
+    /// <summary>
+    /// readonly int that retreives the npcId from the DBContext referenced
+    /// </summary>
+    private readonly int _npcId;
+    /// <summary>
+    /// readonly int that retreives the connectionString from the Database referenced
+    /// </summary>
+    private readonly string _connectionString;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="caseId"></param>
+    /// <param name="npcId"></param>
+    /// <param name="connectionString"></param>
     public MainForm(int caseId, int npcId, string connectionString)
     {
+        // using the underscore so that I know it's from the GlamwireDbContext
+        _caseId = caseId;
+        _npcId = npcId;
+        _connectionString = connectionString;
         InitializeComponent();
     }
 
@@ -16,22 +41,36 @@ public partial class MainForm : Form
 
     private void NewGame_bttn_Click_1(object sender, EventArgs e)
     {
-        // create a new PlayerNameForm each time NewGame_bttn is clicked
-        var PlayerNameForm = new PlayerNameForm(GameContext.CurrentCaseId, GameContext.UnlockedNPCId, GameContext.ConnectionString);
-        // shows the new PlayerNameForm (pop up window)
-        PlayerNameForm.Show();
-        // hides the previous MainForm
-        this.Hide();
+        using (var db = new GlamwireDbContext())
+        {
+            var currentCase = db.Case.FirstOrDefault(c => c.CaseID == _caseId);
+            var unlockedNpc = db.NPC.FirstOrDefault(n => n.NPCId == _npcId);
+
+            var playerNameForm = new PlayerNameForm(
+                currentCase.CaseID,
+                unlockedNpc.NPCId,
+                db.Database.GetConnectionString());
+
+            playerNameForm.Show();
+            this.Hide();
+        }
+
     }
     private void LoadGame_bttn_Click(object sender, EventArgs e) // create a delay on load? 
     {
-        // create a new SaveFileForm each time LoadGame_bttn is clicked
-        var SaveFileForm = new SaveFileForm(GameContext.CurrentCaseId, GameContext.UnlockedNPCId, GameContext.ConnectionString);
-        // show the SaveFile form for loading
-        // then create a new GameForm with loaded data...
-        SaveFileForm.Show();
-        // this :) hides the previous MainForm
-        this.Hide();
+        using (var db = new GlamwireDbContext())
+        {
+            var currentCase = db.Case.FirstOrDefault(c => c.CaseID == _caseId);
+            var unlockedNpc = db.NPC.FirstOrDefault(n => n.NPCId == _npcId);
+
+            var saveFileForm = new SaveFileForm(
+                currentCase.CaseID,
+                unlockedNpc.NPCId,
+                _connectionString);
+
+            saveFileForm.Show();
+            this.Hide();
+        }
     }
     private void Exit_bttn_Click(object sender, EventArgs e)
     {
