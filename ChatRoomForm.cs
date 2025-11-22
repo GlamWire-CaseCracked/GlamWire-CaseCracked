@@ -14,6 +14,13 @@ namespace GlamWire_Case_Cracked
 {
     public partial class ChatRoomForm : Form
     {
+        /// <summary>
+        ///  The ChatRoomForm Initializes the form and loads in the games 
+        ///  active npcs for the current case that the user is investigating.
+        /// </summary>
+        /// <param name="caseId"></param>
+        /// <param name="npcId"></param>
+        /// <param name="connectionString"></param>
         public ChatRoomForm(int caseId, int npcId ,string connectionString)
         {
             // create and initialize a method that will go here

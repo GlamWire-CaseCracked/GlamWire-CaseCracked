@@ -13,7 +13,13 @@ namespace GlamWire_Case_Cracked
 {
     public partial class PlayerNameForm : Form
     {
-
+        /// <summary>
+        /// PlayerNameForm initializes the PlayerNameForm and has 3 parameters
+        /// passed through
+        /// </summary>
+        /// <param name="caseId"></param>
+        /// <param name="npcId"></param>
+        /// <param name="connectionString"></param>
         public PlayerNameForm(int caseId, int npcId, string connectionString)
         {
             InitializeComponent();
@@ -35,6 +41,15 @@ namespace GlamWire_Case_Cracked
             MainForm.Show();// show the Mainform again. 
         }
 
+        /// <summary>
+        /// This is the Start Button on the PlayerNameForm, 
+        /// After it has validated that the user has in fact entered a name 
+        /// of 3 characters or greater, it will redirect the user to the 
+        /// GameStartupForm aka Glamwire.exe. It will then completely hide the 
+        /// previous form. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StartNewGame_btn_Click(object sender, EventArgs e)
         {
 

@@ -11,6 +11,11 @@ using System.Web;
 
 namespace GlamWire_Case_Cracked;
 
+/// <summary>
+/// GlamwireDb class extracts information/data from the database and helps distribute it 
+/// throughout the program with the help of the GlamwireDbContext.
+/// <see cref="GlamwireDbContext"/>
+/// </summary>
 public class GlamwireDb
 {
     /// <summary>

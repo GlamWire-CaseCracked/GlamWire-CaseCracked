@@ -29,6 +29,13 @@ namespace GlamWire_Case_Cracked
 
         }
 
+        /// <summary>
+        /// This is the Back Button for the SaveFileForm, it redirects to the MainForm currently, 
+        /// however, it needs to be a little bit more dynamic. In that, it just returns to the previous 
+        /// form that was up.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Back_bttn_Click(object sender, EventArgs e)
         { // this is just going to redirect to the main form 
             // copy this to all back buttons.
