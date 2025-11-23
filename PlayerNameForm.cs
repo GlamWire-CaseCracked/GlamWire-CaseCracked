@@ -14,7 +14,6 @@ namespace GlamWire_Case_Cracked
     public partial class PlayerNameForm : Form
     {
 
-
         /// <summary>
         /// readonly int that retreives the caseId from the DB referenced
         /// </summary>
@@ -62,10 +61,12 @@ namespace GlamWire_Case_Cracked
         /// <param name="e"></param>
         private void StartNewGame_btn_Click(object sender, EventArgs e)
         {
-
+            var db = new GlamwireDb();
             // declare a variable for playername -- retrieve the player input/name from
             // PlayerName_txtbox -- trim the whitespace.
             string playerName = PlayerName_txtbox.Text.Trim();
+
+            var currentCase = db.RetrieveActiveCase(_caseId);
 
             // if the string above^^ (playername) is null 
             if (string.IsNullOrWhiteSpace(playerName))

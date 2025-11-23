@@ -36,8 +36,8 @@ namespace GlamWire_Case_Cracked
             _caseId = caseId;
             _npcId = npcId;
             // create and initialize a method that will go here
-            LoadGameNPCs();
             InitializeComponent();
+            LoadGameNPCs();
         }
 
         /// <summary>
@@ -50,19 +50,23 @@ namespace GlamWire_Case_Cracked
         public void LoadGameNPCs() {
 
             var db = new GlamwireDb();
-            var npcs = db.GetNPCsForCase(_caseId);
+            var npcs = db.GetNPCsForCase(_caseId + 1);
 
-            // loop thought each ACTIVE npc and populate
+            // clear the list box before repopulating
+            NPCLog_box.Items.Clear();
+
+            if (npcs.Count == 0)
+            {
+                MessageBox.Show("No NPCs found for CaseId=" + _caseId);
+                return;
+            }
+
+            // loop through each NPC and populate
             foreach (var npc in npcs)
             {
-                // if there is an npc populate it into the NPCLog_box
                 if (npc != null)
                 {
                     NPCLog_box.Items.Add(npc.NPCUsername);
-                }
-                if (npcs.Count == 0)
-                {
-                    MessageBox.Show("No NPCs found for CaseId=" + _caseId);
                 }
             }
         }
