@@ -1,5 +1,6 @@
 using GlamWire_Case_Cracked.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 using System.Runtime.CompilerServices;
 
 namespace GlamWire_Case_Cracked;
@@ -13,11 +14,10 @@ internal static class Program
 
 
     static void Main()
-    {
+    { 
         // To customize application configuration such as set high DPI settings or default font,
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
-        Application.Run(new MainForm(GameContext.CurrentCaseId.CaseID,
-                      GameContext.UnlockedNPCId, GameContext.ConnectionString));
+        Application.Run(new MainForm());
     }
 }

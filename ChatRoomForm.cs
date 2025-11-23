@@ -14,15 +14,27 @@ namespace GlamWire_Case_Cracked
 {
     public partial class ChatRoomForm : Form
     {
+
+        /// <summary>
+        /// readonly int that retreives the caseId from the DB referenced
+        /// </summary>
+        private readonly int _caseId;
+        /// <summary>
+        /// readonly int that retreives the npcId from the DB referenced
+        /// </summary>
+        private readonly int _npcId;
+
         /// <summary>
         ///  The ChatRoomForm Initializes the form and loads in the games 
         ///  active npcs for the current case that the user is investigating.
         /// </summary>
         /// <param name="caseId"></param>
         /// <param name="npcId"></param>
-        /// <param name="connectionString"></param>
-        public ChatRoomForm(int caseId, int npcId ,string connectionString)
+        public ChatRoomForm(int caseId, int npcId)
         {
+            // using the underscore so that I know it's from the GlamwireDbContext
+            _caseId = caseId;
+            _npcId = npcId;
             // create and initialize a method that will go here
             LoadGameNPCs();
             InitializeComponent();
@@ -37,13 +49,11 @@ namespace GlamWire_Case_Cracked
         /// <param name="connectionString"></param>
         public void LoadGameNPCs() {
 
-            List<NPC> npcs = GlamwireDb.GetNPCsForCase(
-                GameContext.CurrentCaseId.CaseID
-            );
+            var db = new GlamwireDb();
+            var npcs = db.GetNPCsForCase(_caseId);
 
-            int caseId = GameContext.CurrentCaseId.CaseID;
             // loop thought each ACTIVE npc and populate
-            foreach (var npc in GameContext.CurrentCaseId.InvolvedNPCs)
+            foreach (var npc in npcs)
             {
                 // if there is an npc populate it into the NPCLog_box
                 if (npc != null)
@@ -52,7 +62,7 @@ namespace GlamWire_Case_Cracked
                 }
                 if (npcs.Count == 0)
                 {
-                    MessageBox.Show("No NPCs found for CaseId=" + GameContext.CurrentCaseId);
+                    MessageBox.Show("No NPCs found for CaseId=" + _caseId);
                 }
             }
         }

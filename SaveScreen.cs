@@ -1,5 +1,6 @@
 ﻿using GlamWire_Case_Cracked.Models;
 using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,8 +14,17 @@ using GlamWire_Case_Cracked.Models;
 namespace GlamWire_Case_Cracked
 {
     public partial class SaveFileForm : Form
-    {
-        public SaveFileForm(int caseId, int npcId, string connectionString)
+    {    
+        
+        /// <summary>
+         /// readonly int that retreives the caseId from the DB referenced
+         /// </summary>
+        private readonly int _caseId;
+        /// <summary>
+        /// readonly int that retreives the npcId from the DB referenced
+        /// </summary>
+        private readonly int _npcId;
+        public SaveFileForm(int caseId, int npcId)
         {
             InitializeComponent();
         }
@@ -37,11 +47,10 @@ namespace GlamWire_Case_Cracked
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Back_bttn_Click(object sender, EventArgs e)
-        { // this is just going to redirect to the main form 
+        { 
             // copy this to all back buttons.
             this.Hide(); // this hides the current form 
-            var MainForm = new MainForm(GameContext.CurrentCaseId.CaseID,
-                          GameContext.UnlockedNPCId.NPCId, GameContext.ConnectionString); // create a new MainForm instance
+            var MainForm = new MainForm(); // create a new MainForm instance
             MainForm.Show();// show the Mainform again. 
 
         }

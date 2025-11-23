@@ -13,15 +13,26 @@ namespace GlamWire_Case_Cracked
 {
     public partial class PlayerNameForm : Form
     {
+
+
+        /// <summary>
+        /// readonly int that retreives the caseId from the DB referenced
+        /// </summary>
+        private readonly int _caseId;
+        /// <summary>
+        /// readonly int that retreives the npcId from the DB referenced
+        /// </summary>
+        private readonly int _npcId;
+
         /// <summary>
         /// PlayerNameForm initializes the PlayerNameForm and has 3 parameters
         /// passed through
         /// </summary>
         /// <param name="caseId"></param>
         /// <param name="npcId"></param>
-        /// <param name="connectionString"></param>
-        public PlayerNameForm(int caseId, int npcId, string connectionString)
-        {
+        /// 
+        public PlayerNameForm()
+        {   // using the underscore so that I know it's from the GlamwireDbContext
             InitializeComponent();
         }
 
@@ -36,8 +47,7 @@ namespace GlamWire_Case_Cracked
             // this is just going to redirect to the main form 
             // copy this to all back buttons.
             this.Hide(); // this hides the current form 
-            var MainForm = new MainForm(GameContext.CurrentCaseId.CaseID,
-                          GameContext.UnlockedNPCId.NPCId, GameContext.ConnectionString); // create a new MainForm instance
+            var MainForm = new MainForm(); // create a new MainForm instance
             MainForm.Show();// show the Mainform again. 
         }
 
@@ -79,8 +89,7 @@ namespace GlamWire_Case_Cracked
             // Proceed to startup game 
             this.Hide();
             // have the GameStarrupForm load a new Save as well. 
-            var GameStartupForm = new GameStartupForm(GameContext.CurrentCaseId.CaseID,
-                          GameContext.UnlockedNPCId.NPCId, GameContext.ConnectionString);
+            var GameStartupForm = new GameStartupForm(_caseId, _npcId);
             GameStartupForm.Show();
         }
     }
