@@ -14,11 +14,11 @@ using GlamWire_Case_Cracked.Models;
 namespace GlamWire_Case_Cracked
 {
     public partial class SaveFileForm : Form
-    {    
-        
+    {
+
         /// <summary>
-         /// readonly int that retreives the caseId from the DB referenced
-         /// </summary>
+        /// readonly int that retreives the caseId from the DB referenced
+        /// </summary>
         private readonly int _caseId;
         /// <summary>
         /// readonly int that retreives the npcId from the DB referenced
@@ -47,12 +47,25 @@ namespace GlamWire_Case_Cracked
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Back_bttn_Click(object sender, EventArgs e)
-        { 
+        {
             // copy this to all back buttons.
             this.Hide(); // this hides the current form 
             var MainForm = new MainForm(); // create a new MainForm instance
             MainForm.Show();// show the Mainform again. 
 
+        }
+
+        private void Quit_bttn_Click(object sender, EventArgs e)
+        {
+            string unsavedChangesMessage = "Are you sure you want to quit without saving?" +
+                                            " Any unsaved changes will be lost.";
+            var dialogResult = MessageBox.Show(unsavedChangesMessage, "Unsaved Changes!", MessageBoxButtons.YesNo);
+            // if the user chooses No, the program WILL NOT close
+            if (dialogResult == DialogResult.Yes)
+            {
+                // closes the whole program if the user wants to just quit
+                Application.Exit();
+            }
         }
     }
 }

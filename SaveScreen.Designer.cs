@@ -28,46 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            label1 = new Label();
-            button3 = new Button();
             button1 = new Button();
             button2 = new Button();
             Back_bttn = new Button();
-            flowLayoutPanel1.SuspendLayout();
+            listBox1 = new ListBox();
+            Quit_bttn = new Button();
+            SaveQuit_bttn = new Button();
             SuspendLayout();
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Controls.Add(label1);
-            flowLayoutPanel1.Controls.Add(button3);
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(35, 90);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(480, 296);
-            flowLayoutPanel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(59, 25);
-            label1.TabIndex = 1;
-            label1.Text = "label1";
-            // 
-            // button3
-            // 
-            button3.Location = new Point(3, 28);
-            button3.Name = "button3";
-            button3.Size = new Size(112, 34);
-            button3.TabIndex = 0;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            button1.Location = new Point(547, 108);
+            button1.Location = new Point(549, 89);
             button1.Name = "button1";
             button1.Size = new Size(112, 34);
             button1.TabIndex = 1;
@@ -76,7 +47,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(547, 180);
+            button2.Location = new Point(549, 149);
             button2.Name = "button2";
             button2.Size = new Size(112, 34);
             button2.TabIndex = 2;
@@ -93,31 +64,58 @@
             Back_bttn.UseVisualStyleBackColor = true;
             Back_bttn.Click += Back_bttn_Click;
             // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.Items.AddRange(new object[] { "Test PlaceHolder Save - 10/10/2025 (Player - J.Doe) NO DATA" });
+            listBox1.Location = new Point(12, 74);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(510, 354);
+            listBox1.TabIndex = 4;
+            // 
+            // Quit_bttn
+            // 
+            Quit_bttn.Location = new Point(549, 363);
+            Quit_bttn.Name = "Quit_bttn";
+            Quit_bttn.Size = new Size(112, 34);
+            Quit_bttn.TabIndex = 5;
+            Quit_bttn.Text = "Quit Game";
+            Quit_bttn.UseVisualStyleBackColor = true;
+            Quit_bttn.Click += Quit_bttn_Click;
+            // 
+            // SaveQuit_bttn
+            // 
+            SaveQuit_bttn.Location = new Point(537, 301);
+            SaveQuit_bttn.Name = "SaveQuit_bttn";
+            SaveQuit_bttn.Size = new Size(143, 34);
+            SaveQuit_bttn.TabIndex = 6;
+            SaveQuit_bttn.Text = "Save and Quit";
+            SaveQuit_bttn.UseVisualStyleBackColor = true;
+            // 
             // SaveFileForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 174, 200);
             ClientSize = new Size(692, 450);
+            Controls.Add(SaveQuit_bttn);
+            Controls.Add(Quit_bttn);
+            Controls.Add(listBox1);
             Controls.Add(Back_bttn);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(flowLayoutPanel1);
             Name = "SaveFileForm";
             Text = "Save Files";
             Load += SaveScreen_Load;
-            flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private FlowLayoutPanel flowLayoutPanel1;
         private Button button1;
         private Button button2;
         private Button Back_bttn;
-        private Label label1;
-        private Button button3;
+        private ListBox listBox1;
+        private Button Quit_bttn;
+        private Button SaveQuit_bttn;
     }
 }

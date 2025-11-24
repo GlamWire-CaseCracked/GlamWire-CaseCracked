@@ -185,6 +185,7 @@
             saveGame_picBox.SizeMode = PictureBoxSizeMode.Zoom;
             saveGame_picBox.TabIndex = 12;
             saveGame_picBox.TabStop = false;
+            saveGame_picBox.Click += saveGame_picBox_Click;
             // 
             // SaveGame_lbl
             // 

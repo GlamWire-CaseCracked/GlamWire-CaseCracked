@@ -32,10 +32,16 @@ namespace GlamWire_Case_Cracked
 
         private void Glamwire_picBox_Click(object sender, EventArgs e)
         {
-            var ChatRoomForm = new ChatRoomForm(_caseId, _npcId); 
+            var ChatRoomForm = new ChatRoomForm(_caseId, _npcId);
             // shows the chatroom as a modal popup instead of just
             // hiding the whole "Desktop"/ GameStartupForm
             ChatRoomForm.ShowDialog();
+        }
+
+        private void saveGame_picBox_Click(object sender, EventArgs e)
+        {
+            var saveFileForm = new SaveFileForm(_caseId, _npcId);
+            saveFileForm.ShowDialog();
         }
     }
 }
