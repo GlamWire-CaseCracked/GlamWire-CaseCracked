@@ -73,6 +73,7 @@
             Cases_picBox.SizeMode = PictureBoxSizeMode.Zoom;
             Cases_picBox.TabIndex = 1;
             Cases_picBox.TabStop = false;
+            Cases_picBox.Click += Cases_picBox_Click;
             // 
             // Upgrades_picBox
             // 

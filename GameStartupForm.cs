@@ -43,5 +43,11 @@ namespace GlamWire_Case_Cracked
             var saveFileForm = new SaveFileForm(_caseId, _npcId);
             saveFileForm.ShowDialog();
         }
+
+        private void Cases_picBox_Click(object sender, EventArgs e)
+        {
+            var caseProfile = new CaseProfile();
+            caseProfile.ShowDialog();
+        }
     }
 }
