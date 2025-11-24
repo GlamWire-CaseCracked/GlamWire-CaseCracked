@@ -46,7 +46,7 @@ namespace GlamWire_Case_Cracked
 
         private void Cases_picBox_Click(object sender, EventArgs e)
         {
-            var caseProfile = new CaseProfile();
+            var caseProfile = new CaseProfile(_caseId, _npcId);
             caseProfile.ShowDialog();
         }
     }

@@ -76,6 +76,6 @@ public partial class MainForm : Form
     /// <param name="e"></param>
     private void Exit_bttn_Click(object sender, EventArgs e)
     {
-        Close();
+        Application.Exit();
     }
 }

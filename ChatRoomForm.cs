@@ -45,8 +45,6 @@ namespace GlamWire_Case_Cracked
         /// in addition to that if the case is closed, the friends will still remain there. 
         /// just hidden or offline. 
         /// </summary>
-        /// <param name="caseId"></param>
-        /// <param name="connectionString"></param>
         public void LoadGameNPCs() {
 
             var db = new GlamwireDb();
