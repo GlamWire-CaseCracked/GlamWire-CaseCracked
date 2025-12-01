@@ -26,6 +26,8 @@ namespace GlamWire_Case_Cracked
         private readonly int _npcId;
         public SaveFileForm(int caseId, int npcId)
         {
+            _caseId = caseId;
+            _npcId = npcId;
             InitializeComponent();
         }
 
