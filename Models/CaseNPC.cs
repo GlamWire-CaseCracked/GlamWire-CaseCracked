@@ -9,6 +9,10 @@ namespace GlamWire_Case_Cracked.Models
     public class CaseNPC
     {
         public int CaseId { get; set; }
+        public required Case Case { get; set; }
+
         public int NPCId { get; set; }
+        public required NPC NPC { get; set; }
+
     }
 }

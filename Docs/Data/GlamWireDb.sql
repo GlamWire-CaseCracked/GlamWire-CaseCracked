@@ -1,4 +1,4 @@
--- CREATE DATABASE GlamWireDb; 
+--CREATE DATABASE GlamWireDb; 
 USE GlamWireDb;
 
 /* 

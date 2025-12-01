@@ -37,11 +37,11 @@
             // Credentials_lbl
             // 
             Credentials_lbl.AutoSize = true;
-            Credentials_lbl.Location = new Point(204, 137);
+            Credentials_lbl.Location = new Point(239, 126);
             Credentials_lbl.Name = "Credentials_lbl";
-            Credentials_lbl.Size = new Size(411, 25);
+            Credentials_lbl.Size = new Size(329, 25);
             Credentials_lbl.TabIndex = 0;
-            Credentials_lbl.Text = "*ph* Hello Detective, please enter your credentials:";
+            Credentials_lbl.Text = "Hello Detective, please enter your name:";
             // 
             // PlayerName_txtbox
             // 
@@ -50,7 +50,6 @@
             PlayerName_txtbox.Name = "PlayerName_txtbox";
             PlayerName_txtbox.Size = new Size(298, 46);
             PlayerName_txtbox.TabIndex = 1;
-            PlayerName_txtbox.Text = "Enter your name:";
             // 
             // StartNewGame_btn
             // 
@@ -60,6 +59,7 @@
             StartNewGame_btn.TabIndex = 2;
             StartNewGame_btn.Text = "Start";
             StartNewGame_btn.UseVisualStyleBackColor = true;
+            StartNewGame_btn.Click += StartNewGame_btn_Click;
             // 
             // Back_bttn2
             // 
@@ -75,7 +75,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.PaleVioletRed;
+            BackColor = Color.FromArgb(255, 174, 200);
             ClientSize = new Size(800, 450);
             Controls.Add(Back_bttn2);
             Controls.Add(StartNewGame_btn);
