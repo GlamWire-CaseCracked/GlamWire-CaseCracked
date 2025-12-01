@@ -38,6 +38,8 @@ public class GlamwireDb
         // // "hey program, try using the connection string to connect to the database"
         try
         {
+            GlamwireDb db = new GlamwireDb();
+
             using SqlConnection connection = new SqlConnection(_conn);
             // open the connection (a bridge to the database)
             connection.Open();
@@ -92,7 +94,7 @@ public class GlamwireDb
 
         try
         {
-           // GlamwireDb db = new GlamwireDb();
+           GlamwireDb db = new GlamwireDb();
 
             using SqlConnection connection = new SqlConnection(_conn);
             // open the connection (a bridge to the database)
