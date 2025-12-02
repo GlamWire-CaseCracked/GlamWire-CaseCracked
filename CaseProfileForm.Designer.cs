@@ -1,6 +1,6 @@
 ﻿namespace GlamWire_Case_Cracked
 {
-    partial class CaseProfile
+    partial class CaseProfileForm
     {
         /// <summary>
         /// Required designer variable.

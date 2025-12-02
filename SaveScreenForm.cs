@@ -9,13 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GlamWire_Case_Cracked.Models;
 
 namespace GlamWire_Case_Cracked
 {
     public partial class SaveFileForm : Form
     {
 
+        private readonly int _saveId;
         /// <summary>
         /// readonly int that retreives the caseId from the DB referenced
         /// </summary>
@@ -24,13 +24,38 @@ namespace GlamWire_Case_Cracked
         /// readonly int that retreives the npcId from the DB referenced
         /// </summary>
         private readonly int _npcId;
-        public SaveFileForm(int caseId, int npcId)
+        public SaveFileForm(int caseId, int npcId, int saveId)
         {
             _caseId = caseId;
             _npcId = npcId;
+            _saveId = saveId;
             InitializeComponent();
+            LoadSaves();
         }
 
+        public void LoadSaves()
+        {
+            var db = new GlamwireDb();
+            var saves =  db.RetrieveSaveFiles(_saveId + 1);
+
+            // Clear the Save File box first before populating 
+            SaveLog_ListBx.Items.Clear();
+
+            if (saves == null)
+            {
+                MessageBox.Show("You have no saves");
+                return;
+            }
+
+            foreach (var save in saves)
+            {
+                if (save != null)
+                {
+                    SaveLog_ListBx.Items.Add(save.PlayerName);
+                }
+            }
+
+        }
         private void SaveScreen_Load(object sender, EventArgs e)
         {
 

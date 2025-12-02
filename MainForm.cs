@@ -3,8 +3,10 @@ using GlamWire_Case_Cracked.Models;
 namespace GlamWire_Case_Cracked;
 
 public partial class MainForm : Form
-{   
+{
 
+
+    private readonly int _saveId;
     /// <summary>
     /// readonly int that retreives the caseId from the DB referenced
     /// </summary>
@@ -22,8 +24,8 @@ public partial class MainForm : Form
     public MainForm()
     {
         // using the underscore so that I know it's from the GlamwireDbContext
-       // _caseId = caseId;
-       // _npcId = npcId;
+       //_caseId = caseId,
+       //_npcId = npcId;
         InitializeComponent();
     }
 
@@ -53,20 +55,23 @@ public partial class MainForm : Form
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void LoadGame_bttn_Click(object sender, EventArgs e) // create a delay on load? 
+    private void LoadGame_bttn_Click(object sender, EventArgs e)
     {
         var db = new GlamwireDb();
 
+        var currentSave = db.RetrieveSaveFiles(_saveId);
         var currentCase = db.RetrieveActiveCase(_caseId);
         var unlockedNpc = db.RetrieveAllNPCs(_npcId).FirstOrDefault();
 
         var saveFileForm = new SaveFileForm(
             currentCase?.CaseID ?? 1,
-            unlockedNpc?.NPCId ?? 0);
-
+            unlockedNpc?.NPCId ?? 0),
+            currentSave?.SaveID ?? 1;
         saveFileForm.Show();
         this.Hide();
-    }
+        }
+    };
+    
 
     /// <summary>
     /// This is the Exit Button, 
