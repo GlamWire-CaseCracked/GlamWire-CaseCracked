@@ -25,6 +25,41 @@ public class GlamwireDb
         _conn = ConfigurationManager.ConnectionStrings["GlamwireDb"].ConnectionString;
     }
 
+    public List<SaveFile> RetrieveSaveFiles (int saveId)
+    {
+        var saves = new List<SaveFile>();
+
+        try
+        {
+            GlamwireDb db = new GlamwireDb();
+
+            using SqlConnection connection = new SqlConnection(_conn);
+            // open the connection to the dataase
+            connection.Open();
+            //String Query 
+            string query = @"SELECT * FROM SaveFile";
+            using SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@saveId", saveId);
+            // use the reader to execute the command and read it from the database.
+            using SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                saves.Add(new SaveFile
+                {
+                    SaveFileID = Convert.ToInt32(reader["SaveId"]),
+                    PlayerName = Convert.ToString(reader["PlayerName"]),
+                    LastPlayed = Convert.ToDateTime(reader["LastPlayed"]),
+                    SolvedCases = Convert.ToInt32(reader["SolvedCases"])
+                });
+            }
+        }
+        catch (SqlException ex)
+        {
+            MessageBox.Show($"An Error has occurred while trying to load your saves., {ex.Message}");
+        }
+        return saves;
+    }
+
     /// <summary>
     /// Retrieve all NPCs from the database
     /// </summary>

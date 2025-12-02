@@ -14,6 +14,8 @@ namespace GlamWire_Case_Cracked
     public partial class GameStartupForm : Form
     {
 
+
+        private readonly int _saveId;
         /// <summary>
         /// readonly int that retreives the caseId from the DB referenced
         /// </summary>
@@ -40,13 +42,13 @@ namespace GlamWire_Case_Cracked
 
         private void saveGame_picBox_Click(object sender, EventArgs e)
         {
-            var saveFileForm = new SaveFileForm(_caseId, _npcId);
+            var saveFileForm = new SaveFileForm(_caseId, _npcId, _saveId);
             saveFileForm.ShowDialog();
         }
 
         private void Cases_picBox_Click(object sender, EventArgs e)
         {
-            var caseProfile = new CaseProfile(_caseId, _npcId);
+            var caseProfile = new CaseProfileForm(_caseId, _npcId);
             caseProfile.ShowDialog();
         }
     }

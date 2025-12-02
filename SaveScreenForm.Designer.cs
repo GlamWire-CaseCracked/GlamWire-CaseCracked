@@ -31,7 +31,7 @@
             button1 = new Button();
             button2 = new Button();
             Back_bttn = new Button();
-            listBox1 = new ListBox();
+            SaveLog_ListBx = new ListBox();
             Quit_bttn = new Button();
             SaveQuit_bttn = new Button();
             SuspendLayout();
@@ -64,14 +64,14 @@
             Back_bttn.UseVisualStyleBackColor = true;
             Back_bttn.Click += Back_bttn_Click;
             // 
-            // listBox1
+            // SaveLog_ListBx
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Items.AddRange(new object[] { "Test PlaceHolder Save - 10/10/2025 (Player - J.Doe) NO DATA" });
-            listBox1.Location = new Point(12, 74);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(510, 354);
-            listBox1.TabIndex = 4;
+            SaveLog_ListBx.FormattingEnabled = true;
+            SaveLog_ListBx.Location = new Point(12, 74);
+            SaveLog_ListBx.Name = "SaveLog_ListBx";
+            SaveLog_ListBx.Size = new Size(510, 354);
+            SaveLog_ListBx.Sorted = true;
+            SaveLog_ListBx.TabIndex = 4;
             // 
             // Quit_bttn
             // 
@@ -100,7 +100,7 @@
             ClientSize = new Size(692, 450);
             Controls.Add(SaveQuit_bttn);
             Controls.Add(Quit_bttn);
-            Controls.Add(listBox1);
+            Controls.Add(SaveLog_ListBx);
             Controls.Add(Back_bttn);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -114,7 +114,7 @@
         private Button button1;
         private Button button2;
         private Button Back_bttn;
-        private ListBox listBox1;
+        private ListBox SaveLog_ListBx;
         private Button Quit_bttn;
         private Button SaveQuit_bttn;
     }
