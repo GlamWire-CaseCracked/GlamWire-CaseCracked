@@ -64,7 +64,7 @@ namespace GlamWire_Case_Cracked
             {
                 if (npc != null)
                 {
-                    NPCLog_box.Items.Add(npc.NPCUsername);
+                    NPCLog_box.Items.Add(npc.NPC.NPCUsername);
                 }
             }
         }

@@ -99,7 +99,7 @@ public class GlamwireDb
                     NPCFirstName = Convert.ToString(reader["NPCFirstName"]),
                     NPCLastName = Convert.ToString(reader["NPCLastName"]),
                     NPCUsername = Convert.ToString(reader["NPCUsername"]),
-                    NPCRole = Convert.ToString(reader["Role"]),
+                    Role = Convert.ToString(reader["Role"]),
                     PersonalityType = Convert.ToString(reader["PersonalityType"]),
                     IsLocked = Convert.ToBoolean(reader["IsLocked"]),
                     IsGuilty = Convert.ToBoolean(reader["isGuilty"]),
@@ -123,50 +123,85 @@ public class GlamwireDb
     /// <param name="connectionString">The connection string used to access the database.</param>
     /// <returns>A list of <see cref="NPC"/> objects involved in the specified case. Returns an empty list if no NPCs are
     /// associated with the case.</returns>
-    public List<NPC> GetNPCsForCase(int caseId)
-    { 
-        var caseNPCS = new List<NPC>();
+    public List<CaseNPC> GetNPCsForCase(int caseId)
+    {
+        var caseNPCs = new List<CaseNPC>();
 
         try
         {
-           GlamwireDb db = new GlamwireDb();
-
             using SqlConnection connection = new SqlConnection(_conn);
-            // open the connection (a bridge to the database)
             connection.Open();
 
-            // create a string query that selects from NPC WHERE the caseid and that NPC match
-            // combine both the Case and the NPC table to make CaseNPC
-            string query = @"SELECT n.* FROM NPC n
-                              INNER JOIN CaseNPC cn ON n.NPCId = cn.NPCId
-                             WHERE cn.CaseId = @caseId";
-            // create command line w/ params (to the caseId)
+            // the query is formatted in a way i feel all three tables are 
+            // seen (to know the difference)
+            string query = @"SELECT cn.CaseId, 
+                    c.CaseTitle, 
+                    c.CaseSummary,
+                    c.Difficulty,
+                    c.Reward, 
+                    c.IsSolved,
+                    n.NPCId, 
+                    n.NPCFirstName, 
+                    n.NPCLastName, 
+                    n.NPCUsername, 
+                    n.PersonalityType, 
+                    n.CriminalHistory, 
+                    n.Role,
+                    n.IsLocked,
+                    n.IsGuilty
+                FROM CaseNPC cn
+                INNER JOIN NPC n ON n.NPCId = cn.NPCId
+                INNER JOIN Cases AS c ON c.CaseId = cn.CaseId
+                WHERE cn.CaseId = @caseId";
+
             using SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddWithValue(@"caseId", caseId);
-            using (SqlDataReader reader = cmd.ExecuteReader())
+            cmd.Parameters.AddWithValue("@caseId", caseId);
+
+            using SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
-                while (reader.Read())
+                var npc = new NPC
                 {
-                    caseNPCS.Add(new NPC
-                    {
-                        NPCId = Convert.ToInt32(reader["NPCId"]),
-                        NPCFirstName = Convert.ToString(reader["NPCFirstName"]),
-                        NPCLastName = Convert.ToString(reader["NPCLastName"]),
-                        NPCUsername = Convert.ToString(reader["NPCUsername"]),
-                        NPCRole = Convert.ToString(reader["Role"]),
-                        PersonalityType = Convert.ToString(reader["PersonalityType"]),
-                        IsLocked = Convert.ToBoolean(reader["IsLocked"]),
-                        IsGuilty = Convert.ToBoolean(reader["isGuilty"]),
-                    });
-                }
+                    NPCId = Convert.ToInt32(reader["NPCId"]),
+                    NPCFirstName = Convert.ToString(reader["NPCFirstName"]),
+                    NPCLastName = Convert.ToString(reader["NPCLastName"]),
+                    NPCUsername = Convert.ToString(reader["NPCUsername"]),
+                    PersonalityType = Convert.ToString(reader["PersonalityType"]),
+                    CriminalHistory = Convert.ToString(reader["CriminalHistory"]),
+                    Role = Convert.ToString(reader["Role"]),
+                    IsLocked = Convert.ToBoolean(reader["IsLocked"]),
+                    IsGuilty = Convert.ToBoolean(reader["IsGuilty"]),
+                };
+
+                var cases = new Case
+                {
+                    CaseID = Convert.ToInt32(reader["CaseID"]),
+                    CaseTitle = reader["CaseTitle"].ToString(),
+                    CaseSummary = reader["CaseSummary"].ToString(),
+                    Difficulty = Convert.ToInt32(reader["Difficulty"]),
+                    Reward = Convert.ToInt32(reader["Reward"]),
+                    IsSolved = Convert.ToBoolean(reader["IsSolved"])
+
+                };
+
+                var caseNpc = new CaseNPC
+                {
+                    CaseId = Convert.ToInt32(reader["CaseId"]),
+                    NPCId = npc.NPCId,
+                    Case = cases,
+                    NPC = npc,
+                };
+
+                caseNPCs.Add(caseNpc);
             }
         }
-
         catch (SqlException ex)
         {
-            MessageBox.Show($"An error occurred while trying to JOIN NPC/Cases from database: {ex.Message}");
+            MessageBox.Show("The Error is Occuring in the GetNPCSForCase()!"
+                + $" Database error: {ex.Message}");
         }
-            return caseNPCS;
+
+        return caseNPCs;
     }
 
     /// <summary>
@@ -199,8 +234,9 @@ public class GlamwireDb
                 Difficulty = Convert.ToInt32(reader["Difficulty"]),
                 Reward = Convert.ToInt32(reader["Reward"]),
                 IsSolved = Convert.ToBoolean(reader["IsSolved"]),
-                InvolvedNPCs = GetNPCsForCase(caseId)
             };
+
+            // query through npcs ?? to retrieve the curent case npcs
         }
         return caseObj;
     }

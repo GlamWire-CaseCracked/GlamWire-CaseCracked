@@ -36,7 +36,7 @@ public class Case
     /// Gets or sets the list of NPCs involved in the current context.
     /// From the database, this would be relationship mapping.
     /// </summary>
-    public required List<NPC> InvolvedNPCs { get; set; } = new();
+    public List<NPC>? InvolvedNPCs { get; set; } = new();
 
     // retreives the save file associated with this case
     public SaveFile? SaveFile { get; set; }
