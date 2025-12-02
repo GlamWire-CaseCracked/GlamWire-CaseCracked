@@ -51,7 +51,10 @@ namespace GlamWire_Case_Cracked
             {
                 if (save != null)
                 {
-                    SaveLog_ListBx.Items.Add(save.PlayerName);
+                    // populates save files and formats them like so :
+                    SaveLog_ListBx.Items.Add($"{save.PlayerName} | " +
+                        $"Last Save: {save.LastPlayed} Wallet: {save.Wallet}" +
+                        $"\n Solved Cases: {save.SolvedCases}");
                 }
             }
 

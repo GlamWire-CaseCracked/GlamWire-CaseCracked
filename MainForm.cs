@@ -57,20 +57,25 @@ public partial class MainForm : Form
     /// <param name="e"></param>
     private void LoadGame_bttn_Click(object sender, EventArgs e)
     {
+        // new instance of the database
         var db = new GlamwireDb();
 
-        var currentSave = db.RetrieveSaveFiles(_saveId);
+        // retrieve the list of saves that are currently available
+        // since its a list, I need to pick which save to load first then 
+        // the rest will flow :) 
+        var currentSave = db.RetrieveSaveFiles(_saveId).FirstOrDefault();
+
+        // retrive the Active case -- one case at a time (player can't play mult. at once)
         var currentCase = db.RetrieveActiveCase(_caseId);
         var unlockedNpc = db.RetrieveAllNPCs(_npcId).FirstOrDefault();
 
         var saveFileForm = new SaveFileForm(
             currentCase?.CaseID ?? 1,
-            unlockedNpc?.NPCId ?? 0),
-            currentSave?.SaveID ?? 1;
-        saveFileForm.Show();
-        this.Hide();
+            unlockedNpc?.NPCId ?? 0,
+            currentSave?.SaveFileID ?? 1);
+            saveFileForm.Show();
+            this.Hide();
         }
-    };
     
 
     /// <summary>

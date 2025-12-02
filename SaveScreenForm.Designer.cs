@@ -70,6 +70,7 @@
             SaveLog_ListBx.Location = new Point(12, 74);
             SaveLog_ListBx.Name = "SaveLog_ListBx";
             SaveLog_ListBx.Size = new Size(510, 354);
+            SaveLog_ListBx.Sorted = true;
             SaveLog_ListBx.TabIndex = 4;
             // 
             // Quit_bttn
