@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            Pfp_picBx = new PictureBox();
             NPC_CaseProfilegp = new GroupBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
             label5 = new Label();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            CrimHist_txt = new TextBox();
+            Roletxt = new TextBox();
+            NPCUsertxt = new TextBox();
+            NPC_name2txt = new TextBox();
+            NPC_name1txt = new TextBox();
+            Guilty_rBtn = new RadioButton();
+            Innocent_rBtn = new RadioButton();
             Verdict_gp = new GroupBox();
+            CCase_rBtn = new RadioButton();
             button1 = new Button();
-            radioButton3 = new RadioButton();
-            comboBox1 = new ComboBox();
+            Search_dropBx = new ComboBox();
             label6 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Pfp_picBx).BeginInit();
             NPC_CaseProfilegp.SuspendLayout();
             Verdict_gp.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
+            // Pfp_picBx
             // 
-            pictureBox1.Location = new Point(16, 30);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(154, 177);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            Pfp_picBx.Location = new Point(16, 30);
+            Pfp_picBx.Name = "Pfp_picBx";
+            Pfp_picBx.Size = new Size(154, 177);
+            Pfp_picBx.TabIndex = 0;
+            Pfp_picBx.TabStop = false;
             // 
             // NPC_CaseProfilegp
             // 
@@ -67,100 +67,18 @@
             NPC_CaseProfilegp.Controls.Add(label3);
             NPC_CaseProfilegp.Controls.Add(label2);
             NPC_CaseProfilegp.Controls.Add(label1);
-            NPC_CaseProfilegp.Controls.Add(textBox5);
-            NPC_CaseProfilegp.Controls.Add(textBox4);
-            NPC_CaseProfilegp.Controls.Add(textBox3);
-            NPC_CaseProfilegp.Controls.Add(textBox2);
-            NPC_CaseProfilegp.Controls.Add(textBox1);
-            NPC_CaseProfilegp.Controls.Add(pictureBox1);
+            NPC_CaseProfilegp.Controls.Add(CrimHist_txt);
+            NPC_CaseProfilegp.Controls.Add(Roletxt);
+            NPC_CaseProfilegp.Controls.Add(NPCUsertxt);
+            NPC_CaseProfilegp.Controls.Add(NPC_name2txt);
+            NPC_CaseProfilegp.Controls.Add(NPC_name1txt);
+            NPC_CaseProfilegp.Controls.Add(Pfp_picBx);
             NPC_CaseProfilegp.Location = new Point(94, 22);
             NPC_CaseProfilegp.Name = "NPC_CaseProfilegp";
             NPC_CaseProfilegp.Size = new Size(477, 480);
             NPC_CaseProfilegp.TabIndex = 1;
             NPC_CaseProfilegp.TabStop = false;
             NPC_CaseProfilegp.Text = "NPC_CaseProfile";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(293, 39);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(150, 31);
-            textBox1.TabIndex = 1;
-            textBox1.Visible = false;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(293, 90);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(150, 31);
-            textBox2.TabIndex = 2;
-            textBox2.Visible = false;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(293, 147);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(150, 31);
-            textBox3.TabIndex = 3;
-            textBox3.Visible = false;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(293, 208);
-            textBox4.Name = "textBox4";
-            textBox4.ReadOnly = true;
-            textBox4.Size = new Size(150, 31);
-            textBox4.TabIndex = 4;
-            textBox4.Visible = false;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(40, 325);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.ReadOnly = true;
-            textBox5.Size = new Size(403, 139);
-            textBox5.TabIndex = 5;
-            textBox5.Visible = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(184, 39);
-            label1.Name = "label1";
-            label1.Size = new Size(97, 25);
-            label1.TabIndex = 6;
-            label1.Text = "First Name";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(186, 93);
-            label2.Name = "label2";
-            label2.Size = new Size(95, 25);
-            label2.TabIndex = 7;
-            label2.Text = "Last Name";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(190, 150);
-            label3.Name = "label3";
-            label3.Size = new Size(91, 25);
-            label3.TabIndex = 8;
-            label3.Text = "Username";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(212, 214);
-            label4.Name = "label4";
-            label4.Size = new Size(46, 25);
-            label4.TabIndex = 9;
-            label4.Text = "Role";
             // 
             // label5
             // 
@@ -171,39 +89,133 @@
             label5.TabIndex = 10;
             label5.Text = "Criminal History:";
             // 
-            // radioButton1
+            // label4
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(16, 41);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(149, 29);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Mark as Guilty";
-            radioButton1.UseVisualStyleBackColor = true;
+            label4.AutoSize = true;
+            label4.Location = new Point(212, 214);
+            label4.Name = "label4";
+            label4.Size = new Size(46, 25);
+            label4.TabIndex = 9;
+            label4.Text = "Role";
             // 
-            // radioButton2
+            // label3
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(16, 98);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(173, 29);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Mark as Innocent";
-            radioButton2.UseVisualStyleBackColor = true;
+            label3.AutoSize = true;
+            label3.Location = new Point(190, 150);
+            label3.Name = "label3";
+            label3.Size = new Size(91, 25);
+            label3.TabIndex = 8;
+            label3.Text = "Username";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(186, 93);
+            label2.Name = "label2";
+            label2.Size = new Size(95, 25);
+            label2.TabIndex = 7;
+            label2.Text = "Last Name";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(184, 39);
+            label1.Name = "label1";
+            label1.Size = new Size(97, 25);
+            label1.TabIndex = 6;
+            label1.Text = "First Name";
+            // 
+            // CrimHist_txt
+            // 
+            CrimHist_txt.Location = new Point(40, 325);
+            CrimHist_txt.Multiline = true;
+            CrimHist_txt.Name = "CrimHist_txt";
+            CrimHist_txt.ReadOnly = true;
+            CrimHist_txt.Size = new Size(403, 139);
+            CrimHist_txt.TabIndex = 5;
+            CrimHist_txt.TabStop = false;
+            // 
+            // Roletxt
+            // 
+            Roletxt.Location = new Point(293, 208);
+            Roletxt.Name = "Roletxt";
+            Roletxt.ReadOnly = true;
+            Roletxt.Size = new Size(150, 31);
+            Roletxt.TabIndex = 4;
+            Roletxt.TabStop = false;
+            // 
+            // NPCUsertxt
+            // 
+            NPCUsertxt.Location = new Point(293, 147);
+            NPCUsertxt.Name = "NPCUsertxt";
+            NPCUsertxt.ReadOnly = true;
+            NPCUsertxt.Size = new Size(150, 31);
+            NPCUsertxt.TabIndex = 3;
+            NPCUsertxt.TabStop = false;
+            // 
+            // NPC_name2txt
+            // 
+            NPC_name2txt.Location = new Point(293, 90);
+            NPC_name2txt.Name = "NPC_name2txt";
+            NPC_name2txt.ReadOnly = true;
+            NPC_name2txt.Size = new Size(150, 31);
+            NPC_name2txt.TabIndex = 2;
+            NPC_name2txt.TabStop = false;
+            // 
+            // NPC_name1txt
+            // 
+            NPC_name1txt.Location = new Point(293, 39);
+            NPC_name1txt.Name = "NPC_name1txt";
+            NPC_name1txt.ReadOnly = true;
+            NPC_name1txt.Size = new Size(150, 31);
+            NPC_name1txt.TabIndex = 1;
+            NPC_name1txt.TabStop = false;
+            NPC_name1txt.VisibleChanged += Search_dropBx_SelectedIndexChanged;
+            // 
+            // Guilty_rBtn
+            // 
+            Guilty_rBtn.AutoSize = true;
+            Guilty_rBtn.Location = new Point(16, 41);
+            Guilty_rBtn.Name = "Guilty_rBtn";
+            Guilty_rBtn.Size = new Size(149, 29);
+            Guilty_rBtn.TabIndex = 0;
+            Guilty_rBtn.TabStop = true;
+            Guilty_rBtn.Text = "Mark as Guilty";
+            Guilty_rBtn.UseVisualStyleBackColor = true;
+            // 
+            // Innocent_rBtn
+            // 
+            Innocent_rBtn.AutoSize = true;
+            Innocent_rBtn.Location = new Point(16, 98);
+            Innocent_rBtn.Name = "Innocent_rBtn";
+            Innocent_rBtn.Size = new Size(173, 29);
+            Innocent_rBtn.TabIndex = 1;
+            Innocent_rBtn.TabStop = true;
+            Innocent_rBtn.Text = "Mark as Innocent";
+            Innocent_rBtn.UseVisualStyleBackColor = true;
             // 
             // Verdict_gp
             // 
-            Verdict_gp.Controls.Add(radioButton3);
-            Verdict_gp.Controls.Add(radioButton1);
-            Verdict_gp.Controls.Add(radioButton2);
+            Verdict_gp.Controls.Add(CCase_rBtn);
+            Verdict_gp.Controls.Add(Guilty_rBtn);
+            Verdict_gp.Controls.Add(Innocent_rBtn);
             Verdict_gp.Location = new Point(592, 157);
             Verdict_gp.Name = "Verdict_gp";
             Verdict_gp.Size = new Size(205, 207);
             Verdict_gp.TabIndex = 7;
             Verdict_gp.TabStop = false;
             Verdict_gp.Text = "Verdict";
+            // 
+            // CCase_rBtn
+            // 
+            CCase_rBtn.AutoSize = true;
+            CCase_rBtn.Location = new Point(16, 148);
+            CCase_rBtn.Name = "CCase_rBtn";
+            CCase_rBtn.Size = new Size(183, 29);
+            CCase_rBtn.TabIndex = 2;
+            CCase_rBtn.TabStop = true;
+            CCase_rBtn.Text = "Mark as Cold Case";
+            CCase_rBtn.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -214,24 +226,14 @@
             button1.Text = "Submit Case";
             button1.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // Search_dropBx
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(16, 148);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(183, 29);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Mark as Cold Case";
-            radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(592, 89);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(215, 33);
-            comboBox1.TabIndex = 9;
+            Search_dropBx.FormattingEnabled = true;
+            Search_dropBx.Location = new Point(592, 89);
+            Search_dropBx.Name = "Search_dropBx";
+            Search_dropBx.Size = new Size(215, 33);
+            Search_dropBx.TabIndex = 9;
+            Search_dropBx.SelectedIndexChanged += Search_dropBx_SelectedIndexChanged;
             // 
             // label6
             // 
@@ -242,20 +244,20 @@
             label6.TabIndex = 10;
             label6.Text = "Search By (Username) :";
             // 
-            // CaseProfile
+            // CaseProfileForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 174, 200);
             ClientSize = new Size(819, 535);
             Controls.Add(label6);
-            Controls.Add(comboBox1);
+            Controls.Add(Search_dropBx);
             Controls.Add(button1);
             Controls.Add(Verdict_gp);
             Controls.Add(NPC_CaseProfilegp);
-            Name = "CaseProfile";
+            Name = "CaseProfileForm";
             Text = "Case Folder";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Pfp_picBx).EndInit();
             NPC_CaseProfilegp.ResumeLayout(false);
             NPC_CaseProfilegp.PerformLayout();
             Verdict_gp.ResumeLayout(false);
@@ -266,24 +268,24 @@
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox Pfp_picBx;
         private GroupBox NPC_CaseProfilegp;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private TextBox CrimHist_txt;
+        private TextBox Roletxt;
+        private TextBox NPCUsertxt;
+        private TextBox NPC_name2txt;
+        private TextBox NPC_name1txt;
+        private RadioButton Guilty_rBtn;
+        private RadioButton Innocent_rBtn;
         private GroupBox Verdict_gp;
         private Button button1;
-        private RadioButton radioButton3;
-        private ComboBox comboBox1;
+        private RadioButton CCase_rBtn;
+        private ComboBox Search_dropBx;
         private Label label6;
     }
 }

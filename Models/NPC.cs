@@ -33,16 +33,16 @@ public class NPC
     public required string NPCUsername { get; set; }
 
     // role of the NPC in the game (e.g., witness, suspect, client)
-    public required string NPCRole { get; set; }
+    public required string Role { get; set; }
 
     // the personality type of the NPC, sometimes reading dialog can cause a 
     // misunderstanding of how they come across so maybe this can help.
-    public required string PersonalityType { get; set; }
+    public string? PersonalityType { get; set; }
 
     // tells us if the NPC has a criminal record
     // this can be null if they have no record or if they do 
     // then that may be able to help the player in their investigation
-    public string? CriminalRecord { get; set; } 
+    public string? CriminalHistory { get; set; } 
     // indicates if the NPC is currently locked or unlocked
     // no default currently because I already have them set in the database
     public required bool IsLocked { get; set; }
