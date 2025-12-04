@@ -35,6 +35,8 @@ public class NPC
     // role of the NPC in the game (e.g., witness, suspect, client)
     public required string Role { get; set; }
 
+    public string? AvatarURL { get; set; }
+
     // the personality type of the NPC, sometimes reading dialog can cause a 
     // misunderstanding of how they come across so maybe this can help.
     public string? PersonalityType { get; set; }

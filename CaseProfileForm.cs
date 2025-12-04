@@ -71,5 +71,21 @@ public partial class CaseProfileForm : Form
             Roletxt.Text = selectedCaseNpc.NPC.Role;
             CrimHist_txt.Text = selectedCaseNpc.NPC.CriminalHistory;
         }
+
+        string url = selectedCaseNpc.NPC.AvatarURL;
+        
+        if (!string.IsNullOrEmpty(url))
+        {
+            // creates a full path using the local image .png  and the app startup so that 
+            // we have an explicit path/location we are looking at. 
+            string fullPath = Path.Combine(Application.StartupPath, url);
+
+            if (File.Exists(fullPath))
+                Pfp_picBx.Image = Image.FromFile(fullPath);
+
+            // show nothing 
+            else
+                Pfp_picBx.Image = null;
+        }
     }
 }

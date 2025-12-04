@@ -54,9 +54,10 @@
             // 
             // Pfp_picBx
             // 
-            Pfp_picBx.Location = new Point(16, 30);
+            Pfp_picBx.Location = new Point(24, 28);
             Pfp_picBx.Name = "Pfp_picBx";
             Pfp_picBx.Size = new Size(154, 177);
+            Pfp_picBx.SizeMode = PictureBoxSizeMode.AutoSize;
             Pfp_picBx.TabIndex = 0;
             Pfp_picBx.TabStop = false;
             // 

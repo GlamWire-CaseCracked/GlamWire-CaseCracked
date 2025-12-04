@@ -101,6 +101,7 @@ public class GlamwireDb
                     NPCUsername = Convert.ToString(reader["NPCUsername"]),
                     Role = Convert.ToString(reader["Role"]),
                     PersonalityType = Convert.ToString(reader["PersonalityType"]),
+                    AvatarURL = Convert.ToString(reader["AvatarURL"]),
                     IsLocked = Convert.ToBoolean(reader["IsLocked"]),
                     IsGuilty = Convert.ToBoolean(reader["isGuilty"]),
                 });
@@ -147,6 +148,7 @@ public class GlamwireDb
                     n.PersonalityType, 
                     n.CriminalHistory, 
                     n.Role,
+                    n.AvatarURL,
                     n.IsLocked,
                     n.IsGuilty
                 FROM CaseNPC cn
@@ -169,6 +171,7 @@ public class GlamwireDb
                     PersonalityType = Convert.ToString(reader["PersonalityType"]),
                     CriminalHistory = Convert.ToString(reader["CriminalHistory"]),
                     Role = Convert.ToString(reader["Role"]),
+                    AvatarURL = Convert.ToString(reader["AvatarURL"]),
                     IsLocked = Convert.ToBoolean(reader["IsLocked"]),
                     IsGuilty = Convert.ToBoolean(reader["IsGuilty"]),
                 };
@@ -181,12 +184,11 @@ public class GlamwireDb
                     Difficulty = Convert.ToInt32(reader["Difficulty"]),
                     Reward = Convert.ToInt32(reader["Reward"]),
                     IsSolved = Convert.ToBoolean(reader["IsSolved"])
-
                 };
 
                 var caseNpc = new CaseNPC
                 {
-                    CaseId = Convert.ToInt32(reader["CaseId"]),
+                    CaseId = cases.CaseID,
                     NPCId = npc.NPCId,
                     Case = cases,
                     NPC = npc,
