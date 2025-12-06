@@ -121,6 +121,9 @@
   <data name="pixelfolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Docs\Images\pixelfolder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cluesearch_bkg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Docs\Images\Backgrounds\cluesearch_bkg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pixel-trashcan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Docs\Images\pixel-trashcan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,7 +133,7 @@
   <data name="pixelart-trashcan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Docs\Images\pixelart-trashcan.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pixel-trashcan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Docs\Images\pixel-trashcan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="notes_bkg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Docs\Images\Backgrounds\notes_bkg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

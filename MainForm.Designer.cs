@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             btnNewGame = new Button();
             btnLoadGame = new Button();
             btnExit = new Button();
@@ -111,12 +112,14 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 174, 200);
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(lblSubTitle);
             Controls.Add(lblTitle);
             Controls.Add(btnExit);
             Controls.Add(btnLoadGame);
             Controls.Add(btnNewGame);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
             Text = "GlamWire : Case Cracked";
             ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerNameForm));
             Credentials_lbl = new Label();
             PlayerName_txtbox = new TextBox();
             StartNewGame_btn = new Button();
@@ -81,6 +82,7 @@
             Controls.Add(StartNewGame_btn);
             Controls.Add(PlayerName_txtbox);
             Controls.Add(Credentials_lbl);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PlayerNameForm";
             Text = "New Game";
             ResumeLayout(false);

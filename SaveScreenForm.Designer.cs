@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaveFileForm));
             button1 = new Button();
             button2 = new Button();
             Back_bttn = new Button();
@@ -104,6 +105,7 @@
             Controls.Add(Back_bttn);
             Controls.Add(button2);
             Controls.Add(button1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "SaveFileForm";
             Text = "Save Files";
             Load += SaveScreen_Load;

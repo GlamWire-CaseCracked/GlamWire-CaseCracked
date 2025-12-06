@@ -135,6 +135,7 @@
             Controls.Add(Send_bttn);
             Controls.Add(ChatLog_box);
             Controls.Add(textBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ChatRoomForm";
             Text = "Chatroom";
             ResumeLayout(false);
