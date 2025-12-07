@@ -25,6 +25,32 @@ public class GlamwireDb
         _conn = ConfigurationManager.ConnectionStrings["GlamwireDb"].ConnectionString;
     }
 
+
+    public void CreateSaveFile (SaveFile saveFile)
+    {
+        try
+        {
+            GlamwireDb db = new GlamwireDb();
+
+        }
+        catch (SqlException ex)
+        {
+            MessageBox.Show($"An Error has occurred while trying to create a new save file. , {ex.Message} ");
+        }
+    }
+
+    public void UpdateSaveFile (SaveFile saveFile)
+    {
+        try
+        {
+            GlamwireDb db = new GlamwireDb();
+        }
+        catch (SqlException ex)
+        {
+            MessageBox.Show($"An Error has occurred while trying to update your save file., {ex.Message} ");
+        }
+    }
+
     public List<SaveFile> RetrieveSaveFiles (int saveId)
     {
         var saves = new List<SaveFile>();
