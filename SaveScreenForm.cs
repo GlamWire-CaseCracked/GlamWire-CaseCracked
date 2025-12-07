@@ -36,7 +36,7 @@ namespace GlamWire_Case_Cracked
         public void LoadSaves()
         {
             var db = new GlamwireDb();
-            var saves =  db.RetrieveSaveFiles(_saveId + 1);
+            var saves = db.RetrieveSaveFiles(_saveId + 1);
 
             // Clear the Save File box first before populating 
             SaveLog_ListBx.Items.Clear();
@@ -95,6 +95,18 @@ namespace GlamWire_Case_Cracked
             {
                 // closes the whole program if the user wants to just quit
                 Application.Exit();
+            }
+        }
+
+        private void SaveLog_ListBx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // select the Case NPC using the Selected Items NPC Id num from CaseNPC
+            var selectedCaseNpc = SaveLog_ListBx.SelectedItem as SaveFile;
+
+            // as long as there is a selected item, the textboxes will be populated
+            if (selectedCaseNpc != null)
+            {
+                
             }
         }
     }

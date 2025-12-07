@@ -34,11 +34,12 @@
             SaveLog_ListBx = new ListBox();
             Quit_bttn = new Button();
             SaveQuit_bttn = new Button();
+            Overwrite_btn = new Button();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(549, 89);
+            button1.Location = new Point(549, 134);
             button1.Name = "button1";
             button1.Size = new Size(112, 34);
             button1.TabIndex = 1;
@@ -47,7 +48,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(549, 149);
+            button2.Location = new Point(549, 193);
             button2.Name = "button2";
             button2.Size = new Size(112, 34);
             button2.TabIndex = 2;
@@ -72,6 +73,7 @@
             SaveLog_ListBx.Size = new Size(510, 354);
             SaveLog_ListBx.Sorted = true;
             SaveLog_ListBx.TabIndex = 4;
+            SaveLog_ListBx.SelectedIndexChanged += SaveLog_ListBx_SelectedIndexChanged;
             // 
             // Quit_bttn
             // 
@@ -92,12 +94,22 @@
             SaveQuit_bttn.Text = "Save and Quit";
             SaveQuit_bttn.UseVisualStyleBackColor = true;
             // 
+            // Overwrite_btn
+            // 
+            Overwrite_btn.Location = new Point(549, 74);
+            Overwrite_btn.Name = "Overwrite_btn";
+            Overwrite_btn.Size = new Size(112, 34);
+            Overwrite_btn.TabIndex = 7;
+            Overwrite_btn.Text = "Overwrite";
+            Overwrite_btn.UseVisualStyleBackColor = true;
+            // 
             // SaveFileForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 174, 200);
             ClientSize = new Size(692, 450);
+            Controls.Add(Overwrite_btn);
             Controls.Add(SaveQuit_bttn);
             Controls.Add(Quit_bttn);
             Controls.Add(SaveLog_ListBx);
@@ -117,5 +129,6 @@
         private ListBox SaveLog_ListBx;
         private Button Quit_bttn;
         private Button SaveQuit_bttn;
+        private Button Overwrite_btn;
     }
 }
