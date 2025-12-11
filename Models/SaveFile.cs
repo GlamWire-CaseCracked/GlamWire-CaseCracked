@@ -23,8 +23,8 @@ public class SaveFile
     /// The inserted player name for the save file.
     /// </summary>
     public required string PlayerName { get; set; }
-    public string? SaveFileName { get; set; } = string.Empty; 
-    public int Wallet { get; set; }
+    public string? SaveFileName { get; set; } = string.Empty;
+    public int Wallet { get; set; } = 350;
 
     // LastPlayed = Last time the user played/saved the game
     public DateTime LastPlayed { get; set; }
