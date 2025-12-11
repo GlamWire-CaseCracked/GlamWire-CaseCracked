@@ -1,4 +1,5 @@
-﻿using GlamWire_Case_Cracked.Models;
+﻿using GlamWire_Case_Cracked;
+using GlamWire_Case_Cracked.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,22 +14,15 @@ namespace GlamWire_Case_Cracked
 {
     public partial class PlayerNameForm : Form
     {
-
         /// <summary>
-        /// readonly int that retreives the caseId from the DB referenced
+        /// 
         /// </summary>
-        private readonly int _caseId;
-        /// <summary>
-        /// readonly int that retreives the npcId from the DB referenced
-        /// </summary>
-        private readonly int _npcId;
+        public static string SavedPlayerName;
 
         /// <summary>
         /// PlayerNameForm initializes the PlayerNameForm and has 3 parameters
         /// passed through
         /// </summary>
-        /// <param name="caseId"></param>
-        /// <param name="npcId"></param>
         /// 
         public PlayerNameForm()
         {   // using the underscore so that I know it's from the GlamwireDbContext
@@ -59,39 +53,52 @@ namespace GlamWire_Case_Cracked
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// 
         private void StartNewGame_btn_Click(object sender, EventArgs e)
         {
-            var db = new GlamwireDb();
-            // declare a variable for playername -- retrieve the player input/name from
-            // PlayerName_txtbox -- trim the whitespace.
             string playerName = PlayerName_txtbox.Text.Trim();
 
-            var currentCase = db.RetrieveActiveCase(_caseId);
-
-            // if the string above^^ (playername) is null 
             if (string.IsNullOrWhiteSpace(playerName))
             {
-                // show that the name is invalid
-                MessageBox.Show("Please enter your name to start.", "Missing Name",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter your name.");
                 return;
             }
 
-            // checks to for a certain length for the string/playername. Making simple names like: 
-            // "Ron" vaild. 
             if (playerName.Length < 3)
             {
-                MessageBox.Show("That is not a valid name, please try again. " +
-                            "Your name must be 3 characters or greater", "Invalid Input",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
+                MessageBox.Show("Name must be at least 3 characters.");
+                return;
             }
 
-            // Proceed to startup game 
+            // Create a save
+            var db = new GlamwireDb();
+
+            var newSave = new SaveFile
+            {
+                PlayerName = playerName,
+                Wallet = 350,
+                SolvedCases = 0,
+                LastPlayed = DateTime.Now
+            };
+
+            db.CreateSaveFile(newSave);
+
+            // Load starting case and NPCs
+            int caseId = 1; // or whatever your "first case" is
+            int npcId = 2;
+
+            // Open the game
+            var startup = new GameStartupForm(
+                caseId,
+                npcId,
+                newSave.PlayerName,
+                newSave.Wallet,
+                newSave.SolvedCases,
+                newSave.SaveFileID
+            );
+
+            startup.Show();
             this.Hide();
-            // have the GameStarrupForm load a new Save as well. 
-            var GameStartupForm = new GameStartupForm(_caseId, _npcId);
-            GameStartupForm.Show();
         }
     }
 }
