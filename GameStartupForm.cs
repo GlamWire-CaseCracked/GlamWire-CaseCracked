@@ -13,9 +13,6 @@ namespace GlamWire_Case_Cracked
 {
     public partial class GameStartupForm : Form
     {
-
-
-        private readonly int _saveId;
         /// <summary>
         /// readonly int that retreives the caseId from the DB referenced
         /// </summary>
@@ -25,8 +22,21 @@ namespace GlamWire_Case_Cracked
         /// </summary>
         private readonly int _npcId;
 
-        public GameStartupForm(int caseId, int npcId)
+        private string _playerName;
+        private int _wallet;
+        private int _solvedCases;
+        private readonly int _saveId;
+
+        public GameStartupForm(int caseId, int npcId, string playerName, 
+                                    int wallet, int solvedCases, int saveId)
         {   // using the underscore so that I know it's from the GlamwireDbContext
+
+            _saveId = saveId;
+            _playerName = playerName;
+            _wallet = wallet;
+            _solvedCases = solvedCases;
+
+
             _caseId = caseId;
             _npcId = npcId;
             InitializeComponent();
@@ -42,7 +52,7 @@ namespace GlamWire_Case_Cracked
 
         private void saveGame_picBox_Click(object sender, EventArgs e)
         {
-            var saveFileForm = new SaveFileForm(_caseId, _npcId, _saveId);
+            var saveFileForm = new SaveFileForm();
             saveFileForm.ShowDialog();
         }
 

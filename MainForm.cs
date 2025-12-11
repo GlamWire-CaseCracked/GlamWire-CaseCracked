@@ -4,28 +4,11 @@ namespace GlamWire_Case_Cracked;
 
 public partial class MainForm : Form
 {
-
-
-    private readonly int _saveId;
-    /// <summary>
-    /// readonly int that retreives the caseId from the DB referenced
-    /// </summary>
-    private readonly int _caseId;
-    /// <summary>
-    /// readonly int that retreives the npcId from the DB referenced
-    /// </summary>
-    private readonly int _npcId;
-
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="caseId"></param>
-    /// <param name="npcId"></param>
     public MainForm()
     {
-        // using the underscore so that I know it's from the GlamwireDbContext
-       //_caseId = caseId,
-       //_npcId = npcId;
         InitializeComponent();
     }
 
@@ -57,26 +40,13 @@ public partial class MainForm : Form
     /// <param name="e"></param>
     private void LoadGame_bttn_Click(object sender, EventArgs e)
     {
-        // new instance of the database
-        var db = new GlamwireDb();
-
-        // retrieve the list of saves that are currently available
-        // since its a list, I need to pick which save to load first then 
-        // the rest will flow :) 
-        var currentSave = db.RetrieveSaveFiles(_saveId).FirstOrDefault();
-
-        // retrive the Active case -- one case at a time (player can't play mult. at once)
-        var currentCase = db.RetrieveActiveCase(_caseId);
-        var unlockedNpc = db.RetrieveAllNPCs(_npcId).FirstOrDefault();
-
-        var saveFileForm = new SaveFileForm(
-            currentCase?.CaseID ?? 1,
-            unlockedNpc?.NPCId ?? 0,
-            currentSave?.SaveFileID ?? 1);
-            saveFileForm.Show();
-            this.Hide();
+        var saveForm = new SaveFileForm();
+        if (saveForm.ShowDialog() == DialogResult.OK)
+        {
+            var selected = saveForm.LoadedSave;
         }
-    
+    }
+
 
     /// <summary>
     /// This is the Exit Button, 

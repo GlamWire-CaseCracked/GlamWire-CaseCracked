@@ -1,9 +1,10 @@
 ﻿using GlamWire_Case_Cracked.Models;
 using Microsoft.Data.SqlClient;
-using System.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -25,13 +26,33 @@ public class GlamwireDb
         _conn = ConfigurationManager.ConnectionStrings["GlamwireDb"].ConnectionString;
     }
 
+    // -------------------- SAVEFILE TABLE ------------------------------
 
+    /// <summary>
+    /// This method creates a new save file in the database when the 
+    /// player clicks start on the player name screen after selecting new game
+    /// on the main form
+    /// </summary>
+    /// <param name="saveFile"></param>
     public void CreateSaveFile (SaveFile saveFile)
     {
         try
         {
             GlamwireDb db = new GlamwireDb();
+            using SqlConnection connection = new SqlConnection(_conn);
+            // open the connection to the dataase
+            connection.Open();
+            //String Query 
+            string query = @"INSERT INTO SaveFile (PlayerName, LastPlayed, SolvedCases)
+                             VALUES (@playerName, @lastPlayed, @solvedCases)";
+            SqlCommand cmd = new SqlCommand(query, connection);
 
+            cmd.Parameters.AddWithValue("@SaveId", saveFile.SaveFileID);
+            cmd.Parameters.AddWithValue("@playerName", saveFile.PlayerName);
+            cmd.Parameters.AddWithValue("@lastPlayed", saveFile.LastPlayed);
+            cmd.Parameters.AddWithValue("@solvedCases", saveFile.SolvedCases);
+
+            cmd.ExecuteNonQuery();
         }
         catch (SqlException ex)
         {
@@ -39,11 +60,60 @@ public class GlamwireDb
         }
     }
 
-    public void UpdateSaveFile (SaveFile saveFile)
+    /// <summary>
+    /// Deletes the actively selected save file
+    /// </summary>
+    /// <param name="saveFile"></param>
+    public void DeleteSaveFile(SaveFile saveFile)
     {
         try
         {
             GlamwireDb db = new GlamwireDb();
+            using SqlConnection connection = new SqlConnection(_conn);
+            connection.Open();
+
+            string query = "DELETE FROM SaveFile WHERE SaveId = @saveId";
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            cmd.Parameters.AddWithValue("@SaveId", saveFile.SaveFileID);
+            cmd.Parameters.AddWithValue("@playerName", saveFile.PlayerName);
+            cmd.Parameters.AddWithValue("@lastPlayed", saveFile.LastPlayed);
+            cmd.Parameters.AddWithValue("@solvedCases", saveFile.SolvedCases);
+
+            cmd.ExecuteNonQuery();
+        }
+        catch (SqlException ex)
+        {
+            MessageBox.Show($"An Error has occurred while trying to delete a save file. , {ex.Message} ");
+        }
+    }
+
+
+    /// <summary>
+    /// This methods Overwrites/updates an existing save file in the database. 
+    /// </summary>
+    /// <param name="saveFile"></param>
+    public void OverwriteSaveFile (SaveFile saveFile)
+    {
+        try
+        {
+            GlamwireDb db = new GlamwireDb();
+            using SqlConnection connection = new SqlConnection(_conn);
+            // open the connection to the dataase
+            connection.Open();
+            //String Query
+            string query = @"UPDATE SaveFile
+                             SET PlayerName = @playerName,
+                                 LastPlayed = @lastPlayed,
+                                 SolvedCases = @solvedCases
+                           WHERE SaveId = @saveId";
+            using SqlCommand cmd = new SqlCommand(query, connection);
+
+            cmd.Parameters.AddWithValue("@SaveId", saveFile.SaveFileID);
+            cmd.Parameters.AddWithValue("@Name", saveFile.PlayerName);
+            cmd.Parameters.AddWithValue("@Wallet", saveFile.Wallet);
+            cmd.Parameters.AddWithValue("@LastPlayed", saveFile.LastPlayed);
+            cmd.Parameters.AddWithValue("@SolvedCases", saveFile.SolvedCases);
         }
         catch (SqlException ex)
         {
@@ -51,7 +121,12 @@ public class GlamwireDb
         }
     }
 
-    public List<SaveFile> RetrieveSaveFiles (int saveId)
+    /// <summary>
+    /// This retrieves ALL save files for the save file form
+    /// </summary>
+    /// <param name="saveId"></param>
+    /// <returns></returns>
+    public List<SaveFile> RetrieveSaveFiles ()
     {
         var saves = new List<SaveFile>();
 
@@ -65,7 +140,6 @@ public class GlamwireDb
             //String Query 
             string query = @"SELECT * FROM SaveFile";
             using SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddWithValue("@saveId", saveId);
             // use the reader to execute the command and read it from the database.
             using SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -81,10 +155,12 @@ public class GlamwireDb
         }
         catch (SqlException ex)
         {
-            MessageBox.Show($"An Error has occurred while trying to load your saves., {ex.Message}");
+            MessageBox.Show($"An Error has occurred while trying to load ALL your saves., {ex.Message}");
         }
         return saves;
     }
+
+    // -------------------- CASENPC/NPC TABLE ------------------------------
 
     /// <summary>
     /// Retrieve all NPCs from the database
@@ -146,7 +222,6 @@ public class GlamwireDb
     /// Typically, an active case. 
     /// </summary>
     /// <param name="caseId">The identifier of the case for which to retrieve NPCs.</param>
-    /// <param name="connectionString">The connection string used to access the database.</param>
     /// <returns>A list of <see cref="NPC"/> objects involved in the specified case. Returns an empty list if no NPCs are
     /// associated with the case.</returns>
     public List<CaseNPC> GetNPCsForCase(int caseId)
@@ -229,6 +304,8 @@ public class GlamwireDb
 
         return caseNPCs;
     }
+
+    // -------------------- CASES TABLE ------------------------------
 
     /// <summary>
     /// Retrieves a list of active cases from the database.
