@@ -78,14 +78,7 @@ public partial class SaveFileForm : Form
 
     private void SaveLog_ListBx_SelectedIndexChanged(object sender, EventArgs e)
     {
-        //// select the Case NPC using the Selected Items NPC Id num from CaseNPC
-        //var selectedSave = SaveLog_ListBx.SelectedItem as SaveFile;
 
-        //// as long as there is a selected item, the textboxes will be populated
-        //if (selectedSave != null)
-        //{
-
-        //}
     }
 
     // This loads the save I need to change the button name

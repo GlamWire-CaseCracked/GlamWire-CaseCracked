@@ -40,8 +40,6 @@ public class SaveFile
     {
 
         // this is how the save file will be displayed and structred 
-        // I may need to remove this because it is already formatted in the 
-        // database???..
         return $"{PlayerName} | Coins: {Wallet} | Save Name: {SaveFileName} " +
                              $"| Cases Solved: {SolvedCases}";
     }
