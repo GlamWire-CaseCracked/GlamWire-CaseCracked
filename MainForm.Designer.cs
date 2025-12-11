@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             btnNewGame = new Button();
             btnLoadGame = new Button();
             btnExit = new Button();
@@ -39,9 +40,10 @@
             // 
             // btnNewGame
             // 
-            btnNewGame.Location = new Point(270, 180);
+            btnNewGame.FlatStyle = FlatStyle.Popup;
+            btnNewGame.Location = new Point(124, 190);
             btnNewGame.Name = "btnNewGame";
-            btnNewGame.Size = new Size(253, 60);
+            btnNewGame.Size = new Size(207, 60);
             btnNewGame.TabIndex = 0;
             btnNewGame.Text = "New Game";
             btnNewGame.UseVisualStyleBackColor = true;
@@ -49,9 +51,10 @@
             // 
             // btnLoadGame
             // 
-            btnLoadGame.Location = new Point(270, 265);
+            btnLoadGame.FlatStyle = FlatStyle.Popup;
+            btnLoadGame.Location = new Point(124, 265);
             btnLoadGame.Name = "btnLoadGame";
-            btnLoadGame.Size = new Size(253, 60);
+            btnLoadGame.Size = new Size(207, 60);
             btnLoadGame.TabIndex = 1;
             btnLoadGame.Text = "Load Game";
             btnLoadGame.UseVisualStyleBackColor = true;
@@ -59,9 +62,10 @@
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(270, 347);
+            btnExit.FlatStyle = FlatStyle.Popup;
+            btnExit.Location = new Point(124, 343);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(253, 60);
+            btnExit.Size = new Size(207, 60);
             btnExit.TabIndex = 2;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
@@ -70,9 +74,12 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
+            lblTitle.BackColor = Color.FromArgb(192, 0, 192);
             lblTitle.Font = new Font("Elephant", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitle.ForeColor = Color.HotPink;
-            lblTitle.Location = new Point(186, 40);
+            lblTitle.ForeColor = Color.LavenderBlush;
+            lblTitle.Image = Properties.Resources.detectivegirl;
+            lblTitle.ImageAlign = ContentAlignment.TopCenter;
+            lblTitle.Location = new Point(12, 29);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(444, 93);
             lblTitle.TabIndex = 3;
@@ -83,9 +90,12 @@
             // lblSubTitle
             // 
             lblSubTitle.AutoSize = true;
+            lblSubTitle.BackColor = Color.FromArgb(192, 0, 192);
             lblSubTitle.Font = new Font("Broadway", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblSubTitle.ForeColor = Color.Azure;
-            lblSubTitle.Location = new Point(218, 122);
+            lblSubTitle.Image = Properties.Resources.detectivegirl;
+            lblSubTitle.ImageAlign = ContentAlignment.TopCenter;
+            lblSubTitle.Location = new Point(40, 132);
             lblSubTitle.Name = "lblSubTitle";
             lblSubTitle.Size = new Size(376, 55);
             lblSubTitle.TabIndex = 4;
@@ -110,13 +120,15 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 174, 200);
+            BackgroundImage = Properties.Resources.detectivegirl;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(lblSubTitle);
             Controls.Add(lblTitle);
             Controls.Add(btnExit);
             Controls.Add(btnLoadGame);
             Controls.Add(btnNewGame);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
             Text = "GlamWire : Case Cracked";
             ResumeLayout(false);

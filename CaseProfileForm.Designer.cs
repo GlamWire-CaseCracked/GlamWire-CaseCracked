@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CaseProfileForm));
             Pfp_picBx = new PictureBox();
             NPC_CaseProfilegp = new GroupBox();
             label5 = new Label();
@@ -54,9 +55,10 @@
             // 
             // Pfp_picBx
             // 
-            Pfp_picBx.Location = new Point(16, 30);
+            Pfp_picBx.Location = new Point(24, 28);
             Pfp_picBx.Name = "Pfp_picBx";
             Pfp_picBx.Size = new Size(154, 177);
+            Pfp_picBx.SizeMode = PictureBoxSizeMode.AutoSize;
             Pfp_picBx.TabIndex = 0;
             Pfp_picBx.TabStop = false;
             // 
@@ -255,6 +257,7 @@
             Controls.Add(button1);
             Controls.Add(Verdict_gp);
             Controls.Add(NPC_CaseProfilegp);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CaseProfileForm";
             Text = "Case Folder";
             ((System.ComponentModel.ISupportInitialize)Pfp_picBx).EndInit();

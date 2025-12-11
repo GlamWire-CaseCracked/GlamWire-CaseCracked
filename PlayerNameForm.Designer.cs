@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerNameForm));
             Credentials_lbl = new Label();
             PlayerName_txtbox = new TextBox();
             StartNewGame_btn = new Button();
@@ -53,6 +54,7 @@
             // 
             // StartNewGame_btn
             // 
+            StartNewGame_btn.FlatStyle = FlatStyle.Popup;
             StartNewGame_btn.Location = new Point(338, 255);
             StartNewGame_btn.Name = "StartNewGame_btn";
             StartNewGame_btn.Size = new Size(112, 34);
@@ -76,11 +78,14 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 174, 200);
+            BackgroundImage = Properties.Resources.detectivegirl;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(Back_bttn2);
             Controls.Add(StartNewGame_btn);
             Controls.Add(PlayerName_txtbox);
             Controls.Add(Credentials_lbl);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PlayerNameForm";
             Text = "New Game";
             ResumeLayout(false);

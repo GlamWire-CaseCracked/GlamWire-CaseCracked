@@ -14,6 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Docs\Images\Backgrounds\cluesearch_bkg.png" />
+    <None Remove="Docs\Images\Backgrounds\detectgg.png" />
+    <None Remove="Docs\Images\Backgrounds\notes_bkg.png" />
     <None Remove="GameStartupForm.resx~RF2880ff41.TMP" />
   </ItemGroup>
 

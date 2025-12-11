@@ -219,6 +219,7 @@
             Controls.Add(Upgrades_picBox);
             Controls.Add(Cases_picBox);
             Controls.Add(Folder_picBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "GameStartupForm";
             Text = "Glamwire.exe";
             ((System.ComponentModel.ISupportInitialize)Folder_picBox1).EndInit();
